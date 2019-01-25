@@ -127,6 +127,7 @@ MonoBehaviour:
   resistancePoints: 1
   furyPoints: 1
   destroyedSprite: {fileID: 0}
+  breakSound: {fileID: 0}
 --- !u!61 &2345227104983200410
 BoxCollider2D:
   m_ObjectHideFlags: 0

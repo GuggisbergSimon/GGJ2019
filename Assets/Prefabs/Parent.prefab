@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 1702689375882825206}
   - component: {fileID: 1702689375882825207}
   - component: {fileID: 1702689375882825204}
+  - component: {fileID: 2897084260423162735}
   m_Layer: 0
   m_Name: Parent
   m_TagString: Untagged
@@ -157,12 +158,12 @@ MonoBehaviour:
   repathRate: 0.5
   canSearch: 1
   canMove: 1
-  speed: 3
+  speed: 4
   orientation: 1
   enableRotation: 1
-  rotationSpeed: 10
+  rotationSpeed: 30
   interpolatePathSwitches: 1
-  switchPathInterpolationSpeed: 5
+  switchPathInterpolationSpeed: 10
   targetCompatibility: {fileID: 0}
 --- !u!114 &1702689375882825204
 MonoBehaviour:
@@ -178,3 +179,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   target: {fileID: 0}
+--- !u!114 &2897084260423162735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702689375882825202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb6a34d769a1e4ac7b0b30e433aa443c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  smoothType: 0
+  subdivisions: 2
+  iterations: 2
+  strength: 0.5
+  uniformLength: 1
+  maxSegmentLength: 2
+  bezierTangentLength: 0.4
+  offset: 0.2
+  factor: 0.1
