@@ -23,7 +23,7 @@ public class Door : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             GameManager.Instance.Camera.MoveRoomFunction(nextRoom.transform.position);
-            GameManager.Instance.Player.transform.position += Vector3.up*1.5f*(Mathf.Sign(nextRoom.transform.position.y-actualRoom.transform.position.y));
+            GameManager.Instance.Player.transform.position += Vector3.up*2*(Mathf.Sign(nextRoom.transform.position.y-actualRoom.transform.position.y));
             nextRoom.SetActive(true);
             actualRoom.SetActive(false);
         }
