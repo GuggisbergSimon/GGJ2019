@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
 		_verticalInput = Input.GetAxis("Vertical");
 		if (Input.GetButtonDown("Jump"))
 		{
+			//todo find a more elegant way to get the child of aim
 			Collider2D hit = Physics2D.OverlapCircle(aim.transform.GetChild(0).transform.position, interactRadius);
 			if (hit && hit.CompareTag("Breakable"))
 			{
