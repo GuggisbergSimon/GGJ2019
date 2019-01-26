@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 7f05b3a3c73cc4b44b1b1b8129b99e38
+  - enabled: 1
+    path: Assets/Scenes/PixelGame.unity
+    guid: 06effb9e18811d14cb8e721b386bcb10
+  - enabled: 1
+    path: Assets/Scenes/SimonScene.unity
+    guid: 422cb1da587962441b75153abe437980
   m_configObjects: {}
