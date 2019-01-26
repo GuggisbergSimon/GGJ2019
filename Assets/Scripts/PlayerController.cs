@@ -11,14 +11,15 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private int damage = 1;
 	[SerializeField] private GameObject aim = null;
 	private float _horizontalInput;
-	private float _verticalInput;
-	private float _preHorizontalInput; // la dernière action
-	private float _preVerticalInput;
+	private List<GameObject> willBreakNext = new List<GameObject>();
+    public Animator MyAnimator
+    private Animator _myAnimator;
+    private Rigidbody2D _myRigidBody;
+    private float _preVerticalInput;
+    private float _preHorizontalInput;// la dernière action
+    private float _verticalInput;
 	private bool _canPunch = true;
 	private bool _isLookingRight;
-	private Rigidbody2D _myRigidBody;
-	private Animator _myAnimator;
-	private List<GameObject> willBreakNext = new List<GameObject>();
 
 	[FMODUnity.EventRef] [SerializeField] private string eventRef;
 	private FMOD.Studio.EventInstance footstep;
@@ -39,9 +40,10 @@ public class PlayerController : MonoBehaviour
 	{
 		_myAnimator = GetComponentInChildren<Animator>();
 		_myRigidBody = GetComponent<Rigidbody2D>();
-		FMODUnity.RuntimeManager.AttachInstanceToGameObject(footstep, transform, _myRigidBody);
-		footstep.start();
-		volume.setValue(volumeSound * (GameManager.Instance.VolumeMaster / 100));
+		_myAnimator = GetComponent<Animator>();
+	    FMODUnity.RuntimeManager.AttachInstanceToGameObject(footstep, transform, _myRigidBody);
+	    footstep.start();
+	    volume.setValue(volumeSound * (GameManager.Instance.VolumeMaster / 100));
 	}
 
 	private void FixedUpdate()
@@ -83,20 +85,19 @@ public class PlayerController : MonoBehaviour
 			}
 		}
 
-		if (_horizontalInput > 0.1 || _horizontalInput < -0.1 || _verticalInput > 0.1 || _verticalInput < -0.1)
-		{
-			end.setValue(1);
-		}
-		else if (_preHorizontalInput > 0.1 || _preHorizontalInput < -0.1 || _preVerticalInput > 0.1 ||
-				 _preVerticalInput < -0.1)
-		{
-			end.setValue(1.5f);
-			randomLoop.setValue(Random.Range(1, 3));
-		}
+	    _preHorizontalInput = _horizontalInput;
+	    _preVerticalInput = _verticalInput;
 
-		_preHorizontalInput = _horizontalInput;
-		_preVerticalInput = _verticalInput;
+	    if (GameManager.Instance.UIManager.FuryGauge.Fury >= 100)
+	    {
+            _myAnimator.SetTrigger("Death");
+	    }
 	}
+
+    public void GameOver()
+    {
+        GameManager.Instance.LoadScene("GameOver");
+    }
 
 	public void Break()
 	{
