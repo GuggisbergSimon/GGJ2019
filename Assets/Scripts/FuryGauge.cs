@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 using UnityEngine.UI;
 /*
@@ -11,6 +12,8 @@ public class FuryGauge : MonoBehaviour
     [SerializeField] float furyTime;
     int fury = 50;
     [SerializeField] Image furyBar;
+    [SerializeField] private Sprite[] spriteHead;
+    [SerializeField] private Sprite[] spriteHair;
 
     [SerializeField] private int maxFuryAllowedOpenDoor = 50;
     public int MaxFuryAllowedOpenDoor
@@ -20,6 +23,7 @@ public class FuryGauge : MonoBehaviour
     }
 
     private Image imageHead;
+    private Image imageFire;
     private Animator animatorHead;
 
 
@@ -53,29 +57,28 @@ public class FuryGauge : MonoBehaviour
         if (fury < maxFuryAllowedOpenDoor)
         {
             animator.SetFloat("Speed", 0.25f);
+            imageHead.sprite = spriteHead[0];
+            furyBar.sprite = spriteHair[0];
             GameManager.Instance.Camera.ConstantNoise(2, 0.02f);
-            imageHead.color = Color.green;
             animatorHead.SetFloat("Speed", 1 );
         }
         else if (fury > 75)
         {
             animator.SetFloat("Speed", 100f);
+            imageHead.sprite = spriteHead[2];
+            furyBar.sprite = spriteHair[2];
             GameManager.Instance.Camera.ConstantNoise(5, 5);
-            imageHead.color = Color.red;
             animatorHead.SetFloat("Speed", 50);
-
-
         }
         else
         {
             animator.SetFloat("Speed", 1f);
+            imageHead.sprite = spriteHead[1];
+            furyBar.sprite = spriteHair[1];
             GameManager.Instance.Camera.ConstantNoise(1f, 1f);
-            imageHead.color = Color.yellow;
             animatorHead.SetFloat("Speed", 5);
-
-
         }
-
+        
         GameManager.Instance.UIManager.PostProcessVolume.weight =  (fury / furyMax)* (fury / furyMax);
     }
 
@@ -86,6 +89,8 @@ public class FuryGauge : MonoBehaviour
         while (true)
         {
             furyBar.fillAmount = fury / furyMax;
+            furyBar.color = Color.Lerp(new Color(255f/255, 230f/255, 92f/255), new Color(199f/255, 17f/255, 0f/255), fury/furyMax);
+            Debug.Log(furyBar.color);
             if (fury < 100)
             {
                 fury++;

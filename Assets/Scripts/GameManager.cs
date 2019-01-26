@@ -24,13 +24,6 @@ public class GameManager : MonoBehaviour
     private UIManager uiManager;
     public UIManager UIManager => uiManager;
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            QuitGame();
-        }
-    }
 
 
     [SerializeField] private float volumeMaster = 100;// from 0 to 100
@@ -39,6 +32,35 @@ public class GameManager : MonoBehaviour
         get => volumeMaster;
         set => volumeMaster = value;
     }
+
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnLevelFinishedLoadingScene;
+    }
+
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnLevelFinishedLoadingScene;
+    }
+    
+    //this function is activated every time a scene is loaded
+    private void OnLevelFinishedLoadingScene(Scene scene, LoadSceneMode mode)
+    {
+        Setup();
+        Debug.Log("Scene Loaded");
+    }
+
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            QuitGame();
+        }
+    }
+
 
     private void Awake()
     {
