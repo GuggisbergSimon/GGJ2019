@@ -48,7 +48,22 @@ public class Breakable : MonoBehaviour
 				GetComponentInChildren<SpriteRenderer>().color = Color.gray;
 				//GetComponentInChildren<SpriteRenderer>().sprite = destroyedSprite;
 				_isBroken = true;
-				GameManager.Instance.UIManager.FuryGauge.Fury -= furyPoints;
+
+			    if (GameManager.Instance.UIManager.FuryGauge.Fury < 25)
+			    {
+
+			        GameManager.Instance.UIManager.FuryGauge.Fury -= (int)(furyPoints * 0.5f);
+                }
+			    else if (GameManager.Instance.UIManager.FuryGauge.Fury > 75)
+			    {
+			        GameManager.Instance.UIManager.FuryGauge.Fury -= (int)(furyPoints * 2f);
+
+                }
+			    else
+			    {
+			        GameManager.Instance.UIManager.FuryGauge.Fury -= (int)(furyPoints * 1f);
+
+                }
 				Destroy(_myCollider);
 				//GameManager.Instance.AStarPath.Scan();
 				GameManager.Instance.UIManager.Flash();

@@ -8,9 +8,10 @@ public class Door : MonoBehaviour
 	[SerializeField] private GameObject actualRoom;
 	[SerializeField] private int maxFuryAllowedOpenDoor = 50;
 	[SerializeField] private int furyAddedAfterOpening = 10;
-	
+
 	private BoxCollider2D boxCollider2D;
 	private SpriteRenderer mySpriteRenderer;
+	private bool isOpen = false;
 	
 	[FMODUnity.EventRef] [SerializeField] private string eventRef;
 	private FMOD.Studio.EventInstance doorSound;
@@ -36,25 +37,21 @@ public class Door : MonoBehaviour
 
 	void Update()
 	{
-		if (GameManager.Instance.UIManager.FuryGauge.Fury < maxFuryAllowedOpenDoor)
+		if (!isOpen && GameManager.Instance.UIManager.FuryGauge.Fury < maxFuryAllowedOpenDoor)
 		{
 			boxCollider2D.isTrigger = true;
 			doorState.setValue(1);
-		}
-		else
-		{
-			boxCollider2D.isTrigger = false;
-			doorState.setValue(0);
 		}
 	}
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.CompareTag("Player") || GameManager.Instance.UIManager.FuryGauge.Fury < maxFuryAllowedOpenDoor)
+		if (!isOpen && other.CompareTag("Player") && GameManager.Instance.UIManager.FuryGauge.Fury < maxFuryAllowedOpenDoor)
 		{
 			doorSound.start();
 			nextRoom.SetActive(true);
 			mySpriteRenderer.gameObject.SetActive(false);
+			isOpen = true;
 			GameManager.Instance.UIManager.FuryGauge.Fury += furyAddedAfterOpening;
 		}
 	}

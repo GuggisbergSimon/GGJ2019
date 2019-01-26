@@ -10,10 +10,15 @@ public class CameraManager : MonoBehaviour
 	private CinemachineBasicMultiChannelPerlin noise;
 	private int numberShaking = 0;
 
+	private float constantAmplitude = 10;
+	private float constantFrequency = 10;
+	private bool temporaryNoise = false;
+
 	void Start()
 	{
 		vcam = GetComponent<CinemachineVirtualCamera>();
 		noise = vcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+		ConstantNoise();
 	}
 
 	void Update()
@@ -21,32 +26,28 @@ public class CameraManager : MonoBehaviour
 		transform.position = new Vector3(transform.position.x, transform.position.y, -10);
 	}
 
-	public void MoveRoomFunction(Vector3 newPosition)
-	{
-		StartCoroutine(GameManager.Instance.Camera.MoveRoom(newPosition));
-	}
-
-	public IEnumerator MoveRoom(Vector3 newPosition)
-	{
-		Time.timeScale = 0.0f;
-		float time = 0.0f;
-		Vector3 startPosition = transform.position;
-		newPosition = new Vector3(newPosition.x, newPosition.y, -10);
-		while (time < timeBetweenRoom)
-		{
-			time += Time.unscaledDeltaTime;
-			transform.position = Vector3.Lerp(startPosition, newPosition, time / timeBetweenRoom);
-			yield return null;
-		}
-
-		Time.timeScale = 1.0f;
-		yield return 0;
-	}
-
 	public void Noise(float amplitudeGain, float frequencyGain)
 	{
-		noise.m_AmplitudeGain = amplitudeGain;
-		noise.m_FrequencyGain = frequencyGain;
+		noise.m_AmplitudeGain = amplitudeGain + constantAmplitude;
+		noise.m_FrequencyGain = frequencyGain + constantFrequency;
+		temporaryNoise = true;
+	}
+
+	public void ConstantNoise(float amplitudeGain, float frequencyGain)
+	{
+		constantAmplitude = amplitudeGain;
+		constantFrequency = frequencyGain;
+		if (!temporaryNoise)
+		{
+			ConstantNoise();
+		}
+	}
+
+	public void ConstantNoise()
+	{
+		temporaryNoise = false;
+		noise.m_AmplitudeGain = constantAmplitude;
+		noise.m_FrequencyGain = constantFrequency;
 	}
 
 	public void StopShakingCam(float time)
