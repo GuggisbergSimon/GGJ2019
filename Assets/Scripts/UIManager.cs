@@ -12,6 +12,10 @@ public class UIManager : MonoBehaviour
 	[SerializeField] private float flashDuration = 0.01f;
 	private int numberFlash;
 	private FuryGauge furyGauge;
+    [SerializeField] private GameObject head;
+    public GameObject Head => head;
+
+    private FuryGauge furyGauge;
 	public FuryGauge FuryGauge => furyGauge;
 
     private PostProcessVolume postProcessVolume;

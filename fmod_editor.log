@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 49152, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000000003DA93A98 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 00000000422A9088 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -19,7 +19,46 @@
 [LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 103)
 [LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 103)
 [LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 103)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 103)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SoundI::release                          :  (000000003D158E98)
+[LOG] SoundI::release                          :     loop_2 (000000004299C8F8)
+[LOG] SoundI::release                          :  (000000003D1574B8)
+[LOG] SoundI::release                          :     loop_3 (000000004299CF78)
+[LOG] SoundI::release                          :  (000000003D157D58)
+[LOG] SoundI::release                          :     loop_1 (000000004299D2B8)
+[LOG] SoundI::release                          :  (000000003D157798)
+[LOG] SoundI::release                          :     end_footsteps_2 (000000004299CC38)
+[LOG] SoundI::release                          :  (000000003D157908)
+[LOG] SoundI::release                          :     end_footsteps_3 (000000004299C5B8)
+[LOG] SoundI::release                          :  (000000003D1588D8)
+[LOG] SoundI::release                          :     end_footsteps_echo (000000004299CA98)
+[LOG] SoundI::release                          :  (000000003D157EC8)
+[LOG] SoundI::release                          :     knocking_1 (000000004299D458)
+[LOG] SoundI::release                          :  (000000003D157A78)
+[LOG] SoundI::release                          :     knocking_2 (000000004299DE18)
+[LOG] SoundI::release                          :  (000000003D158D28)
+[LOG] SoundI::release                          :     knocking_3 (000000004299C758)
+[LOG] SoundI::release                          :  (000000003D157348)
+[LOG] SoundI::release                          :     door_opening (000000004299D5F8)
+[LOG] SoundI::release                          :  (000000003D1581A8)
+[LOG] SoundI::release                          :     broken glass (000000004299C278)
+[LOG] SoundI::release                          :  (000000003D157BE8)
+[LOG] SoundI::release                          :     broken_little_thing (000000004299CDD8)
+[LOG] SoundI::release                          :  (000000003D158038)
+[LOG] SoundI::release                          :     broken thhhhing (000000004299C0D8)
+[LOG] SoundI::release                          :  (000000003D158318)
+[LOG] SoundI::release                          :     broken_wood (000000004299D938)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::close                           : Closed.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
 [LOG] LiveUpdate::release                      : 
