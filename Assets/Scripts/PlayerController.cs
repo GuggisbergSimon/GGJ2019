@@ -12,8 +12,12 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private GameObject aim = null;
 	private float _horizontalInput;
 	private List<GameObject> willBreakNext = new List<GameObject>();
-    public Animator MyAnimator
     private Animator _myAnimator;
+    public Animator MyAnimator
+    {
+        get => _myAnimator;
+        set => _myAnimator = value;
+    }
     private Rigidbody2D _myRigidBody;
     private float _preVerticalInput;
     private float _preHorizontalInput;// la dernière action
@@ -38,7 +42,6 @@ public class PlayerController : MonoBehaviour
 
 	private void Start()
 	{
-		_myAnimator = GetComponentInChildren<Animator>();
 		_myRigidBody = GetComponent<Rigidbody2D>();
 		_myAnimator = GetComponent<Animator>();
 	    FMODUnity.RuntimeManager.AttachInstanceToGameObject(footstep, transform, _myRigidBody);
