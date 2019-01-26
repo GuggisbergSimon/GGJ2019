@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Breakable : MonoBehaviour
 {
-	[SerializeField] private int resistancePoints = 1;
+	[SerializeField] private int initialResistancePoints = 1;
 	[SerializeField] private int furyPoints = 1;
 	[SerializeField] private Sprite destroyedSprite = null;
     [SerializeField] private int typeNb;
     private bool _isBroken = false;
 	private Collider2D _myCollider;
+	private int actualResistancePoints;
 
 
     [FMODUnity.EventRef] [SerializeField] private string eventRef;
@@ -24,6 +25,7 @@ public class Breakable : MonoBehaviour
 
     private void Start()
 	{
+		actualResistancePoints = initialResistancePoints;
 		_myCollider = GetComponent<Collider2D>();
 	    type.setValue(typeNb);
 	    //FMODUnity.RuntimeManager.AttachInstanceToGameObject(footstep, transform, _myRigidBody);
@@ -33,19 +35,27 @@ public class Breakable : MonoBehaviour
 	{
 		if (!_isBroken)
 		{
-			//todo add furypoints to fury and update furygauge
-			resistancePoints -= points;
-			if (resistancePoints <= 0)
+			actualResistancePoints -= points;
+			if (actualResistancePoints <= 0)
 			{
-				//todo play breaking sound
 			    breaking.start();
-				//todo replace the next line by the commented one
+				//todo replace the next line by the commented one once we have sprites
 				GetComponentInChildren<SpriteRenderer>().color = Color.gray;
 				//GetComponentInChildren<SpriteRenderer>().sprite = destroyedSprite;
 				_isBroken = true;
-			    GameManager.Instance.FuryGauge.Fury -= furyPoints;
+			    GameManager.Instance.UIManager.FuryGauge.Fury -= furyPoints;
 				Destroy(_myCollider);
-			}
+				GameManager.Instance.AStarPath.Scan();
+				GameManager.Instance.UIManager.Flash();
+				}
+			GameManager.Instance.Camera.Noise(points, points);
+			StartCoroutine(StopShakingCam(initialResistancePoints));
 		}
+	}
+
+	private IEnumerator StopShakingCam(float time)
+	{
+		yield return new WaitForSeconds(time);
+		GameManager.Instance.Camera.Noise(0,0);
 	}
 }

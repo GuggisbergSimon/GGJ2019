@@ -1,18 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
     [SerializeField] private float timeBetweenRoom = 1;
+    private CinemachineVirtualCamera vcam;
+    private CinemachineBasicMultiChannelPerlin noise;
 
-    // Start is called before the first frame update
     void Start()
     {
-        
+        vcam = GetComponent<CinemachineVirtualCamera>();
+        noise = vcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         transform.position = new Vector3(transform.position.x, transform.position.y, -10);
@@ -36,5 +38,11 @@ public class CameraManager : MonoBehaviour
         }
 
         yield return 0;
+    }
+    
+    public void Noise(float amplitudeGain, float frequencyGain)
+    {
+        noise.m_AmplitudeGain = amplitudeGain;
+        noise.m_FrequencyGain = frequencyGain;
     }
 }
