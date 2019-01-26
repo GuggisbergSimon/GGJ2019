@@ -9,8 +9,10 @@ public class FuryGauge : MonoBehaviour
 {
     float furyMax = 100;
     [SerializeField] float furyTime;
-    int fury = 100;
+    int fury = 50;
     [SerializeField] Image furyBar;
+
+    private Animator animator;
 
     public int Fury
     {
@@ -25,6 +27,7 @@ public class FuryGauge : MonoBehaviour
     private void Start()
     {
         StartCoroutine("DrawFury");
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -33,7 +36,25 @@ public class FuryGauge : MonoBehaviour
         {
             fury = 0;
         }
+
+        if (fury < 25)
+        {
+            animator.SetFloat("Speed", 0.25f);
+
+        }
+        else if (fury > 75)
+        {
+            animator.SetFloat("Speed", 10f);
+        }
+        else
+        {
+            animator.SetFloat("Speed", 1f);
+        }
+
+        GameManager.Instance.UIManager.PostProcessVolume.weight =  (fury / furyMax)* (fury / furyMax);
     }
+
+
 
     IEnumerator DrawFury()
     {
