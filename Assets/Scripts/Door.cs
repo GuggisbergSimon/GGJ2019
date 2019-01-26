@@ -6,10 +6,12 @@ public class Door : MonoBehaviour
 {
 	[SerializeField] private GameObject nextRoom;
 	[SerializeField] private GameObject actualRoom;
-
+	[SerializeField] private int maxFuryAllowedOpenDoor = 50;
+	[SerializeField] private int furyAddedAfterOpening = 10;
+	
 	private BoxCollider2D boxCollider2D;
-
-
+	private SpriteRenderer mySpriteRenderer;
+	
 	[FMODUnity.EventRef] [SerializeField] private string eventRef;
 	private FMOD.Studio.EventInstance doorSound;
 	private FMOD.Studio.ParameterInstance doorState;
@@ -27,14 +29,14 @@ public class Door : MonoBehaviour
 
 	void Start()
 	{
+		mySpriteRenderer = GetComponentInChildren<SpriteRenderer>();
 		boxCollider2D = GetComponent<BoxCollider2D>();
 		volume.setValue(volumeSound * (GameManager.Instance.VolumeMaster / 100));
 	}
 
-	// Update is called once per frame
 	void Update()
 	{
-		if (GameManager.Instance.UIManager.FuryGauge.Fury < 50)
+		if (GameManager.Instance.UIManager.FuryGauge.Fury < maxFuryAllowedOpenDoor)
 		{
 			boxCollider2D.isTrigger = true;
 			doorState.setValue(1);
@@ -48,22 +50,17 @@ public class Door : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.CompareTag("Player") || GameManager.Instance.UIManager.FuryGauge.Fury < 50)
+		if (other.CompareTag("Player") || GameManager.Instance.UIManager.FuryGauge.Fury < maxFuryAllowedOpenDoor)
 		{
 			doorSound.start();
-			GameManager.Instance.Camera.MoveRoomFunction(nextRoom.transform.position);
-			int numberCaseToGoBetweenRooms = 2;
-			other.transform.position += (nextRoom.transform.position - actualRoom.transform.position).normalized *
-										numberCaseToGoBetweenRooms;
 			nextRoom.SetActive(true);
-			actualRoom.SetActive(false);
-			GameManager.Instance.UIManager.FuryGauge.Fury = 100;
+			mySpriteRenderer.gameObject.SetActive(false);
+			GameManager.Instance.UIManager.FuryGauge.Fury += furyAddedAfterOpening;
 		}
 	}
 
 	private void OnCollisionEnter2D(Collision2D other)
 	{
-		Debug.Log("Rage");
 		doorSound.start();
 	}
 }
