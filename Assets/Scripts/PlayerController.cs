@@ -10,18 +10,21 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private float interactRadius = 0.5f;
 	[SerializeField] private int damage = 1;
 	[SerializeField] private GameObject aim = null;
+	[SerializeField] private float furyMaxTime = 1.0f;
 	private float _horizontalInput;
 	private List<GameObject> willBreakNext = new List<GameObject>();
-    private Animator _myAnimator;
-    public Animator MyAnimator
-    {
-        get => _myAnimator;
-        set => _myAnimator = value;
-    }
-    private Rigidbody2D _myRigidBody;
-    private float _preVerticalInput;
-    private float _preHorizontalInput;// la dernière action
-    private float _verticalInput;
+	private Animator _myAnimator;
+
+	public Animator MyAnimator
+	{
+		get => _myAnimator;
+		set => _myAnimator = value;
+	}
+
+	private Rigidbody2D _myRigidBody;
+	private float _preVerticalInput;
+	private float _preHorizontalInput; // la dernière action
+	private float _verticalInput;
 	private bool _canPunch = true;
 	private bool _isLookingRight;
 
@@ -99,19 +102,39 @@ public class PlayerController : MonoBehaviour
 			}
 		}
 
-	    _preHorizontalInput = _horizontalInput;
-	    _preVerticalInput = _verticalInput;
+		_preHorizontalInput = _horizontalInput;
+		_preVerticalInput = _verticalInput;
 
-	    if (GameManager.Instance.UIManager.FuryGauge.Fury >= 100)
-	    {
-            _myAnimator.SetTrigger("Death");
-	    }
+		if (GameManager.Instance.UIManager.FuryGauge.Fury >= 100)
+		{
+			StartCoroutine(FuryMax());
+		}
 	}
 
-    public void GameOver()
-    {
-        GameManager.Instance.LoadScene("GameOver");
-    }
+	private IEnumerator FuryMax()
+	{
+		float timer = 0.0f;
+		bool canDie = true;
+		while (timer < furyMaxTime)
+		{
+			if (GameManager.Instance.UIManager.FuryGauge.Fury < 100)
+			{
+				canDie = false;
+			}
+
+			yield return null;
+		}
+
+		if (canDie)
+		{
+			_myAnimator.SetTrigger("Death");
+		}
+	}
+
+	public void GameOver()
+	{
+		GameManager.Instance.LoadScene("GameOver");
+	}
 
 	public void Break()
 	{
