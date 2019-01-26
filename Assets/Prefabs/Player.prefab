@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  interactRadius: 0.1
+  interactRadius: 0.5
   damage: 1
   aim: {fileID: 1017527758}
   eventRef: event:/Footstepv2

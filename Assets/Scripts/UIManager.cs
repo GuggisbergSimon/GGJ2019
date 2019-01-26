@@ -9,6 +9,9 @@ public class UIManager : MonoBehaviour
 	[SerializeField] private GameObject whiteScreen = null;
 	[SerializeField] private GameObject furyObject = null;
 	[SerializeField] private GameObject postProcessObject = null;
+	[SerializeField] private float flashDuration = 0.01f;
+	private int numberFlash;
+	private FuryGauge furyGauge;
     [SerializeField] private GameObject head;
     public GameObject Head => head;
 
@@ -27,12 +30,17 @@ public class UIManager : MonoBehaviour
 	private IEnumerator Flashing()
 	{
 		whiteScreen.SetActive(true);
-		yield return null;
-		whiteScreen.SetActive(false);
+		yield return new WaitForSeconds(flashDuration);
+		numberFlash--;
+		if (numberFlash <= 0)
+		{
+			whiteScreen.SetActive(false);
+		}
 	}
 
 	public void Flash()
 	{
+		numberFlash++;
 		StartCoroutine(Flashing());
 	}
 }

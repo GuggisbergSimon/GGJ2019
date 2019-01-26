@@ -17,12 +17,6 @@ public class GameManager : MonoBehaviour
         get => camera;
     }
 
-    /*private FuryGauge furyGauge;
-    public FuryGauge FuryGauge
-    {
-        get => furyGauge;
-    }*/
-
     private AstarPath aStarPath;
     public AstarPath AStarPath => aStarPath;
 
@@ -54,7 +48,7 @@ public class GameManager : MonoBehaviour
         else
         {
             Instance = this;
-            //DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject);
         }
         Setup();
     }
@@ -63,7 +57,6 @@ public class GameManager : MonoBehaviour
     {
         player = GameObject.FindObjectOfType<PlayerController>();
         camera = GameObject.FindObjectOfType<CameraManager>();
-        //furyGauge = GameObject.FindObjectOfType<FuryGauge>();
         aStarPath = GameObject.FindObjectOfType<AstarPath>();
         uiManager = GameObject.FindObjectOfType<UIManager>();
     }

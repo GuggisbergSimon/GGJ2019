@@ -54,10 +54,13 @@ public class PlayerController : MonoBehaviour
 		if (Input.GetButtonDown("Jump"))
 		{
 			//todo find a more elegant way to get the child of aim
-			Collider2D hit = Physics2D.OverlapCircle(aim.transform.GetChild(0).transform.position, interactRadius);
-			if (hit && hit.CompareTag("Breakable"))
+			Collider2D[] hits = Physics2D.OverlapCircleAll(aim.transform.GetChild(0).transform.position, interactRadius);
+			foreach (var hit in hits)
 			{
-				hit.transform.GetComponent<Breakable>().Damage(damage);
+				if (hit && hit.CompareTag("Breakable"))
+				{
+					hit.transform.GetComponent<Breakable>().Damage(damage);
+				}
 			}
 		}
 	    if (_horizontalInput > 0.1 || _horizontalInput < -0.1 || _verticalInput > 0.1 || _verticalInput < -0.1)
