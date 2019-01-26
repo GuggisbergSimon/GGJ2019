@@ -17,6 +17,12 @@ public class GameManager : MonoBehaviour
         get => camera;
     }
 
+    private FuryGauge furyGauge;
+    public FuryGauge FuryGauge
+    {
+        get => furyGauge;
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -43,6 +49,7 @@ public class GameManager : MonoBehaviour
     {
         player = GameObject.FindObjectOfType<PlayerController>();
         camera = GameObject.FindObjectOfType<CameraManager>();
+        furyGauge = GameObject.FindObjectOfType<FuryGauge>();
     }
 
     public void QuitGame()

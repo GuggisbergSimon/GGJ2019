@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{c3daeb29-1ec5-4167-9176-be4d066e7b5a}">
+        <property name="name">
+            <value>RandomFoot</value>
+        </property>
+        <relationship name="folder">
+            <destination>{5ba0ef94-8478-46a7-a689-ad7499b70595}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{e56a5dc6-4979-425b-ac92-f8543d577bd5}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{e56a5dc6-4979-425b-ac92-f8543d577bd5}">
+        <property name="minimum">
+            <value>1</value>
+        </property>
+        <property name="maximum">
+            <value>3</value>
+        </property>
+        <property name="initialValue">
+            <value>1</value>
+        </property>
+    </object>
+</objects>
