@@ -439,6 +439,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextRoom: {fileID: 534836596}
   actualRoom: {fileID: 1780359881}
+  eventRef: event:/Door
 --- !u!61 &235368738
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2614,7 +2615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e353a817184b22544a00c20c58bd5331, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  furyTime: 60
+  furyTime: 30
   furyBar: {fileID: 1644607231}
 --- !u!114 &1160418497
 MonoBehaviour:
@@ -4402,6 +4403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextRoom: {fileID: 1780359881}
   actualRoom: {fileID: 534836596}
+  eventRef: event:/Door
 --- !u!1001 &2060953605
 PrefabInstance:
   m_ObjectHideFlags: 0
