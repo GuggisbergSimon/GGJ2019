@@ -1055,7 +1055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a01a31f086f64604c88b1898c64c3efd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenChangingColor: 0.01
+  timeBetweenChangingColor: 0.02
 --- !u!1 &1362819812
 GameObject:
   m_ObjectHideFlags: 0
@@ -1637,13 +1637,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2074756339}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 6.5, y: -1, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &2109489667
 GameObject:
   m_ObjectHideFlags: 0

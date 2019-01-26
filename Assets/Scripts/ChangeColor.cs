@@ -19,7 +19,7 @@ public class ChangeColor : MonoBehaviour
 		while (true)
 		{
 			_mySpriteRenderer.color = Color.HSVToRGB(h % 1, 1, 0.5f);
-			h+=0.01f;
+			h += 1 / 360.0f;
 			yield return new WaitForSeconds(timeBetweenChangingColor);
 		}
 	}
