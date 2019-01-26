@@ -4516,7 +4516,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minTime: 5
   maxTime: 10
-  sceneToLoad: SimonScene
+  sceneToLoad: LucaScene
 --- !u!4 &1163752704
 Transform:
   m_ObjectHideFlags: 0
@@ -5143,6 +5143,26 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8852821811736775922, guid: f3a487b098110b041add6184fa335a59,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 107164735}
+    - target: {fileID: 8852821811736775922, guid: f3a487b098110b041add6184fa335a59,
+        type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4508605824062900153, guid: f3a487b098110b041add6184fa335a59,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7572450484770641311, guid: f3a487b098110b041add6184fa335a59,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8852821811466170198, guid: f3a487b098110b041add6184fa335a59,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -5172,16 +5192,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852821811736775922, guid: f3a487b098110b041add6184fa335a59,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 107164735}
-    - target: {fileID: 8852821811736775922, guid: f3a487b098110b041add6184fa335a59,
-        type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3a487b098110b041add6184fa335a59, type: 3}
