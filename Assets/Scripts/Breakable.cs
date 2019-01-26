@@ -67,6 +67,10 @@ public class Breakable : MonoBehaviour
 				Destroy(_myCollider);
 				//GameManager.Instance.AStarPath.Scan();
 				GameManager.Instance.UIManager.Flash();
+			    if (GetComponent<Computer>())
+			    {
+			        GameManager.Instance.GameOver();
+			    }
 			}
 
 			GameManager.Instance.Camera.Noise(points, points);
