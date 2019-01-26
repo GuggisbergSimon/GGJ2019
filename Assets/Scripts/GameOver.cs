@@ -7,11 +7,12 @@ public class GameOver : MonoBehaviour
 {
     public void Yes()
     {
-        //Load Main Scene
+        GameManager.Instance.LoadScene("LucaScene");
     }
 
     public void No()
     {
-        //SceneManager.LoadScene("MainMenu");
+        GameManager.Instance.QuitGame();
+
     }
 }

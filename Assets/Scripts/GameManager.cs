@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -59,6 +60,11 @@ public class GameManager : MonoBehaviour
         camera = GameObject.FindObjectOfType<CameraManager>();
         aStarPath = GameObject.FindObjectOfType<AstarPath>();
         uiManager = GameObject.FindObjectOfType<UIManager>();
+    }
+
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 
     public void QuitGame()

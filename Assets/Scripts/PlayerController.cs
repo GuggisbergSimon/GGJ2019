@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private float _preHorizontalInput;// la dernière action
     private float _preVerticalInput;
     private Rigidbody2D _myRigidBody;
+    private Animator _myAnimator;
 
 
     [FMODUnity.EventRef] [SerializeField] private string eventRef;
@@ -33,7 +34,8 @@ public class PlayerController : MonoBehaviour
     private void Start()
 	{
 		_myRigidBody = GetComponent<Rigidbody2D>();
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(footstep, transform, _myRigidBody);
+		_myAnimator = GetComponent<Animator>();
+	    FMODUnity.RuntimeManager.AttachInstanceToGameObject(footstep, transform, _myRigidBody);
 	    footstep.start();
 	    volume.setValue(volumeSound * (GameManager.Instance.VolumeMaster / 100));
 	}
@@ -75,5 +77,15 @@ public class PlayerController : MonoBehaviour
 
 	    _preHorizontalInput = _horizontalInput;
 	    _preVerticalInput = _verticalInput;
+
+	    if (GameManager.Instance.UIManager.FuryGauge.Fury >= 100)
+	    {
+            _myAnimator.SetTrigger("Death");
+	    }
 	}
+
+    public void GameOver()
+    {
+        GameManager.Instance.LoadScene("GameOver");
+    }
 }
