@@ -12,6 +12,17 @@ public class FuryGauge : MonoBehaviour
     int fury = 50;
     [SerializeField] Image furyBar;
 
+    [SerializeField] private int maxFuryAllowedOpenDoor = 50;
+    public int MaxFuryAllowedOpenDoor
+    {
+        get => maxFuryAllowedOpenDoor;
+        set => maxFuryAllowedOpenDoor = value;
+    }
+
+    private Image imageHead;
+    private Animator animatorHead;
+
+
     private Animator animator;
 
     public int Fury
@@ -28,6 +39,8 @@ public class FuryGauge : MonoBehaviour
     {
         StartCoroutine("DrawFury");
         animator = GetComponent<Animator>();
+        animatorHead = GameManager.Instance.UIManager.Head.GetComponent<Animator>();
+        imageHead = GameManager.Instance.UIManager.Head.GetComponent<Image>();
     }
 
     private void Update()
@@ -37,22 +50,29 @@ public class FuryGauge : MonoBehaviour
             fury = 0;
         }
 
-        if (fury < 35)
+        if (fury < maxFuryAllowedOpenDoor)
         {
             animator.SetFloat("Speed", 0.25f);
             GameManager.Instance.Camera.ConstantNoise(2, 0.02f);
-
-
+            imageHead.color = Color.green;
+            animatorHead.SetFloat("Speed", 1 );
         }
         else if (fury > 75)
         {
             animator.SetFloat("Speed", 100f);
             GameManager.Instance.Camera.ConstantNoise(5, 5);
+            imageHead.color = Color.red;
+            animatorHead.SetFloat("Speed", 50);
+
+
         }
         else
         {
             animator.SetFloat("Speed", 1f);
             GameManager.Instance.Camera.ConstantNoise(1f, 1f);
+            imageHead.color = Color.yellow;
+            animatorHead.SetFloat("Speed", 5);
+
 
         }
 

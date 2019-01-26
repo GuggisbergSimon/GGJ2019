@@ -62,7 +62,7 @@ public class CameraManager : MonoBehaviour
 		numberShaking--;
 		if (numberShaking <= 0)
 		{
-			GameManager.Instance.Camera.Noise(0, 0);
+			GameManager.Instance.Camera.ConstantNoise();
 		}
 	}
 }

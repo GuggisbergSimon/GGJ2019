@@ -6,8 +6,7 @@ public class Door : MonoBehaviour
 {
 	[SerializeField] private GameObject nextRoom;
 	[SerializeField] private GameObject actualRoom;
-	[SerializeField] private int maxFuryAllowedOpenDoor = 50;
-	[SerializeField] private int furyAddedAfterOpening = 10;
+	[SerializeField] private int furyAddedAfterOpening = 50;
 
 	private BoxCollider2D boxCollider2D;
 	private SpriteRenderer mySpriteRenderer;
@@ -37,16 +36,24 @@ public class Door : MonoBehaviour
 
 	void Update()
 	{
-		if (!isOpen && GameManager.Instance.UIManager.FuryGauge.Fury < maxFuryAllowedOpenDoor)
-		{
-			boxCollider2D.isTrigger = true;
-			doorState.setValue(1);
-		}
+	    if (!isOpen)
+	    {
+	        if (GameManager.Instance.UIManager.FuryGauge.Fury <
+	            GameManager.Instance.UIManager.FuryGauge.MaxFuryAllowedOpenDoor)
+	        {
+	            boxCollider2D.isTrigger = true;
+	            doorState.setValue(1);
+	        }
+	        else
+	        {
+	            boxCollider2D.isTrigger = false;
+	        }
+	    }
 	}
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
-		if (!isOpen && other.CompareTag("Player") && GameManager.Instance.UIManager.FuryGauge.Fury < maxFuryAllowedOpenDoor)
+		if (!isOpen && other.CompareTag("Player") && GameManager.Instance.UIManager.FuryGauge.Fury < GameManager.Instance.UIManager.FuryGauge.MaxFuryAllowedOpenDoor)
 		{
 			doorSound.start();
 			nextRoom.SetActive(true);
@@ -56,8 +63,11 @@ public class Door : MonoBehaviour
 		}
 	}
 
-	private void OnCollisionEnter2D(Collision2D other)
-	{
-		doorSound.start();
-	}
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        Debug.Log("Rage");
+        doorSound.start();
+    }
+    
+
 }
