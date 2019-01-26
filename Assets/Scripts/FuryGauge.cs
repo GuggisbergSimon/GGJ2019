@@ -12,6 +12,13 @@ public class FuryGauge : MonoBehaviour
     int fury = 50;
     [SerializeField] Image furyBar;
 
+    [SerializeField] private int maxFuryAllowedOpenDoor = 50;
+    public int MaxFuryAllowedOpenDoor
+    {
+        get => maxFuryAllowedOpenDoor;
+        set => maxFuryAllowedOpenDoor = value;
+    }
+
     private Image imageHead;
     private Animator animatorHead;
 
@@ -43,7 +50,7 @@ public class FuryGauge : MonoBehaviour
             fury = 0;
         }
 
-        if (fury < 35)
+        if (fury < maxFuryAllowedOpenDoor)
         {
             animator.SetFloat("Speed", 0.25f);
             GameManager.Instance.Camera.ConstantNoise(2, 0.02f);

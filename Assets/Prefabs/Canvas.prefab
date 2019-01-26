@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 7357036719297165927}
   - component: {fileID: 963671139868807382}
   - component: {fileID: 7572450484770641311}
+  - component: {fileID: 4508605824062900154}
   m_Layer: 5
   m_Name: Head
   m_TagString: Untagged
@@ -171,8 +172,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 150, y: 150}
-  m_SizeDelta: {x: 300, y: 300}
+  m_AnchoredPosition: {x: 191, y: 234}
+  m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &963671139868807382
 CanvasRenderer:
@@ -211,6 +212,25 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!95 &4508605824062900154
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4508605824062900153}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0f363efb6e2403143bbc5abb491d1f7c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8852821811466170197
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,15 +258,15 @@ RectTransform:
   m_GameObject: {fileID: 8852821811466170197}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.4995, z: 1}
   m_Children: []
   m_Father: {fileID: 8852821811988614423}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 123.425, y: -357.895}
+  m_SizeDelta: {x: 246.85, y: 715.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8852821811466170024
 CanvasRenderer:
@@ -269,19 +289,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 7a91a6eba450ef9479f53d546098ccb4, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 1
-  m_FillAmount: 0
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -402,6 +422,7 @@ MonoBehaviour:
   whiteScreen: {fileID: 202693775}
   furyObject: {fileID: 8852821811988614422}
   postProcessObject: {fileID: 1929158322}
+  flashDuration: 0.01
   head: {fileID: 4508605824062900153}
 --- !u!1 &8852821811988614422
 GameObject:
@@ -431,17 +452,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8852821811988614422}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.0040065465, w: 0.999992}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8081228, y: 0.8081228, z: 0.8081228}
   m_Children:
   - {fileID: 8852821811466170198}
   m_Father: {fileID: 7357036719297165927}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.45900002}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -783.42, y: -64}
+  m_AnchoredPosition: {x: 17.932, y: 474}
   m_SizeDelta: {x: 246.85, y: 715.79}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &8852821811988614506
@@ -495,6 +516,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   furyTime: 30
   furyBar: {fileID: 8852821811466170199}
+  maxFuryAllowedOpenDoor: 25
 --- !u!114 &1555512721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -502,7 +524,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8852821811988614422}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -405508275, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -526,7 +548,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8852821811988614422}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 877795ca78c54814589ebc9b0449bdae, type: 2}
   m_CullingMode: 0
