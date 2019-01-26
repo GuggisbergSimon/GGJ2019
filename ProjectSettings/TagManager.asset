@@ -45,12 +45,12 @@ TagManager:
   - name: Floor
     uniqueID: 1021709261
     locked: 0
+  - name: Wall
+    uniqueID: 1115494607
+    locked: 0
   - name: Object
     uniqueID: 2551150209
     locked: 0
   - name: Player
     uniqueID: 1483753833
-    locked: 0
-  - name: Wall
-    uniqueID: 1115494607
     locked: 0
