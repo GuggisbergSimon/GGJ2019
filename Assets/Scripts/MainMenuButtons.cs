@@ -7,7 +7,7 @@ public class MainMenuButtons : MonoBehaviour
 {
     public void Play()
     {
-        //Load Scene... I can also do a transition, but in the polish
+        SceneManager.LoadScene("SimonScene");
     }
 
     public void Quit()
