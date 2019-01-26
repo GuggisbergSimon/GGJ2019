@@ -11,6 +11,7 @@ public class Breakable : MonoBehaviour
 	private bool _isBroken = false;
 	private Collider2D _myCollider;
 	private int _actualResistancePoints;
+	private SpriteRenderer _mySpriteRenderer;
 
 
 	[FMODUnity.EventRef] [SerializeField] private string eventRef;
@@ -29,6 +30,7 @@ public class Breakable : MonoBehaviour
 
 	private void Start()
 	{
+		_mySpriteRenderer = GetComponentInChildren<SpriteRenderer>();
 		_actualResistancePoints = initialResistancePoints;
 		_myCollider = GetComponent<Collider2D>();
 		type.setValue(typeNb);
@@ -48,21 +50,19 @@ public class Breakable : MonoBehaviour
 				GetComponentInChildren<SpriteRenderer>().color = Color.gray;
 				//GetComponentInChildren<SpriteRenderer>().sprite = destroyedSprite;
 				_isBroken = true;
-
+				_mySpriteRenderer.sortingOrder = -1000;
+				
 			    if (GameManager.Instance.UIManager.FuryGauge.Fury < 25)
 			    {
-
 			        GameManager.Instance.UIManager.FuryGauge.Fury -= (int)(furyPoints * 0.5f);
                 }
 			    else if (GameManager.Instance.UIManager.FuryGauge.Fury > 75)
 			    {
 			        GameManager.Instance.UIManager.FuryGauge.Fury -= (int)(furyPoints * 2f);
-
                 }
 			    else
 			    {
 			        GameManager.Instance.UIManager.FuryGauge.Fury -= (int)(furyPoints * 1f);
-
                 }
 				Destroy(_myCollider);
 				//GameManager.Instance.AStarPath.Scan();
