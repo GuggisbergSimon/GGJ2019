@@ -17,11 +17,17 @@ public class GameManager : MonoBehaviour
         get => camera;
     }
 
-    private FuryGauge furyGauge;
+    /*private FuryGauge furyGauge;
     public FuryGauge FuryGauge
     {
         get => furyGauge;
-    }
+    }*/
+
+    private AstarPath aStarPath;
+    public AstarPath AStarPath => aStarPath;
+
+    private UIManager uiManager;
+    public UIManager UIManager => uiManager;
 
     void Update()
     {
@@ -57,7 +63,9 @@ public class GameManager : MonoBehaviour
     {
         player = GameObject.FindObjectOfType<PlayerController>();
         camera = GameObject.FindObjectOfType<CameraManager>();
-        furyGauge = GameObject.FindObjectOfType<FuryGauge>();
+        //furyGauge = GameObject.FindObjectOfType<FuryGauge>();
+        aStarPath = GameObject.FindObjectOfType<AstarPath>();
+        uiManager = GameObject.FindObjectOfType<UIManager>();
     }
 
     public void QuitGame()
