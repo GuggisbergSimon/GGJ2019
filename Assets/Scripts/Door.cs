@@ -14,16 +14,21 @@ public class Door : MonoBehaviour
     private FMOD.Studio.EventInstance doorSound;
     private FMOD.Studio.ParameterInstance doorState;
 
+    private FMOD.Studio.ParameterInstance volume;
+    [SerializeField] private float volumeSound = 100;// from 0 to 100
+
     private void Awake()
     {
         doorSound = FMODUnity.RuntimeManager.CreateInstance(eventRef);
         doorSound.getParameter("DoorState", out doorState);
+        doorSound.getParameter("Volume", out volume);
     }
 
 
     void Start()
     {
         boxCollider2D = GetComponent<BoxCollider2D>();
+        volume.setValue(volumeSound*(GameManager.Instance.VolumeMaster/100));
     }
 
     // Update is called once per frame
