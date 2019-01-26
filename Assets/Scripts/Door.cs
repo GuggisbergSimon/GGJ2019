@@ -34,7 +34,7 @@ public class Door : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.Instance.UIManager.FuryGauge.Fury < 25)
+        if (GameManager.Instance.UIManager.FuryGauge.Fury < 35)
         {
             boxCollider2D.isTrigger = true;
             doorState.setValue(1);

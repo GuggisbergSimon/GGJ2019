@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
 	    else if (_preHorizontalInput > 0.1 || _preHorizontalInput < -0.1 || _preVerticalInput > 0.1 || _preVerticalInput < -0.1)
 	    {
 	        end.setValue(1.5f);
-	        randomLoop.setValue(Random.Range(1, 3));
+	        randomLoop.setValue(Random.Range(1, 4));
         }
 
 	    _preHorizontalInput = _horizontalInput;

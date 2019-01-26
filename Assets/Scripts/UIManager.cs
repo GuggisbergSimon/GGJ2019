@@ -9,6 +9,8 @@ public class UIManager : MonoBehaviour
 	[SerializeField] private GameObject whiteScreen = null;
 	[SerializeField] private GameObject furyObject = null;
 	[SerializeField] private GameObject postProcessObject = null;
+    [SerializeField] private GameObject head;
+    public GameObject Head => head;
 
     private FuryGauge furyGauge;
 	public FuryGauge FuryGauge => furyGauge;
