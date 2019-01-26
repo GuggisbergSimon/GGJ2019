@@ -34,7 +34,7 @@ public class CameraManager : MonoBehaviour
 		newPosition = new Vector3(newPosition.x, newPosition.y, -10);
 		while (time < timeBetweenRoom)
 		{
-			time += Time.deltaTime;
+			time += Time.unscaledDeltaTime;
 			transform.position = Vector3.Lerp(startPosition, newPosition, time / timeBetweenRoom);
 			yield return null;
 		}
