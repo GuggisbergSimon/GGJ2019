@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 49152, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0000000040FD9268 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0000000052FC1488 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -17,44 +17,13 @@
 [LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 103)
 [LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 103)
 [LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 103)
-[LOG] SoundI::release                          :  (00000000414995F8)
-[LOG] SoundI::release                          :     loop_2 (000000005031EA88)
-[LOG] SoundI::release                          :  (000000004149B2B8)
-[LOG] SoundI::release                          :     loop_3 (0000000053F98E68)
-[LOG] SoundI::release                          :  (000000004149A458)
-[LOG] SoundI::release                          :     loop_1 (000000005031E268)
-[LOG] SoundI::release                          :  (000000004149A8A8)
-[LOG] SoundI::release                          :     end_footsteps_3 (000000005031E408)
-[LOG] SoundI::release                          :  (000000004149A5C8)
-[LOG] SoundI::release                          :     end_footsteps_echo (000000005031EDC8)
-[LOG] SoundI::release                          :  (000000004149A738)
-[LOG] SoundI::release                          :     end_footsteps_2 (000000005031E5A8)
-[LOG] SoundI::release                          :  (000000004149AA18)
-[LOG] SoundI::release                          :     knocking_1 (0000000041727228)
-[LOG] SoundI::release                          :  (000000004149B428)
-[LOG] SoundI::release                          :     knocking_2 (000000005031E748)
-[LOG] SoundI::release                          :  (0000000041499BB8)
-[LOG] SoundI::release                          :     knocking_3 (000000005031E8E8)
-[LOG] SoundI::release                          :  (000000004149B148)
-[LOG] SoundI::release                          :     door_opening (000000005031EF68)
-[LOG] SoundI::release                          :  (000000004149A008)
-[LOG] SoundI::release                          :     broken glass (000000005031EC28)
-[LOG] SoundI::release                          :  (0000000041499768)
-[LOG] SoundI::release                          :     broken_little_thing (0000000041727568)
-[LOG] SoundI::release                          :  (0000000041499E98)
-[LOG] SoundI::release                          :     broken thhhhing (0000000053F991A8)
-[LOG] SoundI::release                          :  (000000005A5567E8)
-[LOG] SoundI::release                          :     broken_wood (0000000041727A48)
-[LOG] Thread::callback                         : FMOD Studio update thread finished.
-[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
-[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
-[LOG] LiveUpdate::release                      : 
-[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
-[LOG] Thread::callback                         : FMOD stream thread finished.
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
-[LOG] SystemI::close                           : Closed.
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 103)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 103)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 103)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 103)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 103)
+[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 103)
 [LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 103)
 [LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 103)
 [LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 103)

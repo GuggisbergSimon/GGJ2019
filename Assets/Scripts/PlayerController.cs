@@ -25,28 +25,39 @@ public class PlayerController : MonoBehaviour
 	private bool _canPunch = true;
 	private bool _isLookingRight;
 
-	[FMODUnity.EventRef] [SerializeField] private string eventRef;
+	[FMODUnity.EventRef] [SerializeField] private string eventRefFoot;
 	private FMOD.Studio.EventInstance footstep;
 	private FMOD.Studio.ParameterInstance randomLoop;
 	private FMOD.Studio.ParameterInstance end; // 0 = init, 1 = walk, 1.5 = end, 2 = echo
-	private FMOD.Studio.ParameterInstance volume;
-	[SerializeField] private float volumeSound = 100; // from 0 to 100
+	private FMOD.Studio.ParameterInstance volumeFoot;
+	[SerializeField] private float volumeSoundFoot = 100; // from 0 to 100
 
-	private void Awake()
+
+    [FMODUnity.EventRef] [SerializeField] private string eventRefHit;
+    private FMOD.Studio.EventInstance hit;
+    private FMOD.Studio.ParameterInstance volumeHit;
+    [SerializeField] private float volumeSoundHit = 100; // from 0 to 100
+
+    private void Awake()
 	{
-		footstep = FMODUnity.RuntimeManager.CreateInstance(eventRef);
+		footstep = FMODUnity.RuntimeManager.CreateInstance(eventRefFoot);
 		footstep.getParameter("RandomFoot", out randomLoop);
 		footstep.getParameter("end", out end);
-		footstep.getParameter("Volume", out volume);
-	}
+		footstep.getParameter("Volume", out volumeFoot);
+
+	    hit = FMODUnity.RuntimeManager.CreateInstance(eventRefHit);
+	    hit.getParameter("Volume", out volumeHit);
+    }
 
 	private void Start()
 	{
 		_myRigidBody = GetComponent<Rigidbody2D>();
 		_myAnimator = GetComponent<Animator>();
 	    FMODUnity.RuntimeManager.AttachInstanceToGameObject(footstep, transform, _myRigidBody);
+	    FMODUnity.RuntimeManager.AttachInstanceToGameObject(hit, transform, _myRigidBody);
 	    footstep.start();
-	    volume.setValue(volumeSound * (GameManager.Instance.VolumeMaster / 100));
+	    volumeFoot.setValue(volumeSoundFoot * (GameManager.Instance.VolumeMaster / 100));
+	    volumeHit.setValue(volumeSoundHit * (GameManager.Instance.VolumeMaster / 100));
 	}
 
 	private void FixedUpdate()
@@ -76,9 +87,9 @@ public class PlayerController : MonoBehaviour
 		{
 			_canPunch = false;
 			_myAnimator.SetTrigger("Attack");
+		    hit.start();      
 			//todo find a more elegant way to get the child of aim
-			Collider2D[] hits =
-				Physics2D.OverlapCircleAll(aim.transform.GetChild(0).transform.position, interactRadius);
+			Collider2D[] hits = Physics2D.OverlapCircleAll(aim.transform.GetChild(0).transform.position, interactRadius);
 			foreach (var hit in hits)
 			{
 				if (hit && hit.CompareTag("Breakable"))
