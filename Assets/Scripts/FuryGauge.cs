@@ -11,7 +11,6 @@ public class FuryGauge : MonoBehaviour
     [SerializeField] float furyTime;
     int fury;
     [SerializeField] Image furyBar;
-
     public int Fury
     {
         get { return fury; }
