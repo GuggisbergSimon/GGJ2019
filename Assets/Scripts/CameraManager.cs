@@ -9,10 +9,15 @@ public class CameraManager : MonoBehaviour
     private CinemachineVirtualCamera vcam;
     private CinemachineBasicMultiChannelPerlin noise;
 
+    private float constantAmplitude = 10;
+    private float constantFrequency = 10;
+    private bool temporaryNoise = false;
+
     void Start()
     {
         vcam = GetComponent<CinemachineVirtualCamera>();
         noise = vcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+        ConstantNoise();
     }
     
     void Update()
@@ -42,7 +47,26 @@ public class CameraManager : MonoBehaviour
     
     public void Noise(float amplitudeGain, float frequencyGain)
     {
-        noise.m_AmplitudeGain = amplitudeGain;
-        noise.m_FrequencyGain = frequencyGain;
+        noise.m_AmplitudeGain = amplitudeGain + constantAmplitude;
+        noise.m_FrequencyGain = frequencyGain + constantFrequency;
+        temporaryNoise = true;
+    }
+
+    public void ConstantNoise(float amplitudeGain, float frequencyGain)
+    {
+        constantAmplitude = amplitudeGain;
+        constantFrequency = frequencyGain;
+        if (!temporaryNoise)
+        {
+
+            ConstantNoise();
+        }
+    }
+
+    public void ConstantNoise()
+    {
+        temporaryNoise = false;
+        noise.m_AmplitudeGain = constantAmplitude;
+        noise.m_FrequencyGain = constantFrequency;
     }
 }

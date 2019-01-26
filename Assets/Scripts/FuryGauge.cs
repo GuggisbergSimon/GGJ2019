@@ -37,18 +37,23 @@ public class FuryGauge : MonoBehaviour
             fury = 0;
         }
 
-        if (fury < 25)
+        if (fury < 35)
         {
             animator.SetFloat("Speed", 0.25f);
+            GameManager.Instance.Camera.ConstantNoise(2, 0.02f);
+
 
         }
         else if (fury > 75)
         {
-            animator.SetFloat("Speed", 10f);
+            animator.SetFloat("Speed", 100f);
+            GameManager.Instance.Camera.ConstantNoise(5, 5);
         }
         else
         {
             animator.SetFloat("Speed", 1f);
+            GameManager.Instance.Camera.ConstantNoise(1f, 1f);
+
         }
 
         GameManager.Instance.UIManager.PostProcessVolume.weight =  (fury / furyMax)* (fury / furyMax);

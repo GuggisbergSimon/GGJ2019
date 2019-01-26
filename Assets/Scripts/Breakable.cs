@@ -76,6 +76,6 @@ public class Breakable : MonoBehaviour
 	private IEnumerator StopShakingCam(float time)
 	{
 		yield return new WaitForSeconds(time);
-		GameManager.Instance.Camera.Noise(0,0);
+		GameManager.Instance.Camera.ConstantNoise();
 	}
 }
