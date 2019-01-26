@@ -14,6 +14,13 @@ public class PlayerController : MonoBehaviour
     private float _preVerticalInput;
     private Rigidbody2D _myRigidBody;
     private Animator _myAnimator;
+    public Animator MyAnimator
+    {
+        get => _myAnimator;
+        set => _myAnimator = value;
+    }
+
+    
 
 
     [FMODUnity.EventRef] [SerializeField] private string eventRef;

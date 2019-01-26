@@ -67,6 +67,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
+    public void GameOver()
+    {
+        player.MyAnimator.SetTrigger("Death");
+    }
+
     public void QuitGame()
     {
 #if UNITY_EDITOR
