@@ -517,8 +517,19 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7518676976328522147, guid: f3a487b098110b041add6184fa335a59,
+        type: 3}
+      propertyPath: furyObject
+      value: 
+      objectReference: {fileID: 1555512720}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3a487b098110b041add6184fa335a59, type: 3}
+--- !u!1 &1555512720 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8852821811988614422, guid: f3a487b098110b041add6184fa335a59,
+    type: 3}
+  m_PrefabInstance: {fileID: 1555512718}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1584051637
 PrefabInstance:
   m_ObjectHideFlags: 0
