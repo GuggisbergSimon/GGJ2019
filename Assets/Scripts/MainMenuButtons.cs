@@ -7,7 +7,7 @@ public class MainMenuButtons : MonoBehaviour
 {
     public void Play()
     {
-        GameManager.Instance.LoadScene("LucaScene");
+        SceneManager.LoadScene("SimonScene");
     }
 
     public void Quit()

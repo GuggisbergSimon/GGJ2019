@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114536560733085476}
-  - {fileID: 114879788187571938}
+  - {fileID: 114511265982084420}
   EditorEvents:
   - {fileID: 114071944744864160}
   - {fileID: 114960395809143794}
@@ -219,7 +219,7 @@ MonoBehaviour:
   Path: event:/break
   guid: 186e11e0583e454e91bbb4a8cbb1b8c8
   Banks:
-  - {fileID: 114879788187571938}
+  - {fileID: 114511265982084420}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -486,7 +486,7 @@ MonoBehaviour:
   Path: event:/Door
   guid: d79bbdb5a0dae847978452f9b9f4534b
   Banks:
-  - {fileID: 114879788187571938}
+  - {fileID: 114511265982084420}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1348,6 +1348,22 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
+--- !u!114 &114425272359803858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: RandomFoot
+  Min: 1
+  Max: 3
+  Default: 1
 --- !u!114 &114433904764724720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1549,6 +1565,38 @@ MonoBehaviour:
   Min: 1
   Max: 3
   Default: 1
+--- !u!114 &114478799193455270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: DoorState
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114486693456861640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Volume
+  Min: 0
+  Max: 100
+  Default: 0
 --- !u!114 &114503063086493782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1597,6 +1645,26 @@ MonoBehaviour:
   Min: 0
   Max: 4
   Default: 0
+--- !u!114 &114511265982084420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\Ataor\UnityProjects\GGJ2019\Assets\Audio\FMOD\project\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636840918716517263
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 201856
+  Exists: 1
 --- !u!114 &114512408160548038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2211,7 +2279,7 @@ MonoBehaviour:
   Path: event:/Footstep
   guid: cd081768f3fff144b6fa237eb7b9727a
   Banks:
-  - {fileID: 114879788187571938}
+  - {fileID: 114511265982084420}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -2460,7 +2528,7 @@ MonoBehaviour:
   Path: event:/Footstepv2
   guid: abefcd2c9d901447a4a306c98b343228
   Banks:
-  - {fileID: 114879788187571938}
+  - {fileID: 114511265982084420}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -2690,7 +2758,7 @@ MonoBehaviour:
   Path: event:/music
   guid: 50a77fe479658d4dbe1f752f8a54649b
   Banks:
-  - {fileID: 114879788187571938}
+  - {fileID: 114511265982084420}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2700,6 +2768,22 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &114961625725665428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Fury
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114961980975873428
 MonoBehaviour:
   m_ObjectHideFlags: 0
