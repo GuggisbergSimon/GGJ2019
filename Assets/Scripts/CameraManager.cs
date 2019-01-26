@@ -32,11 +32,6 @@ public class CameraManager : MonoBehaviour
         {
             time += Time.deltaTime;
             transform.position = Vector3.Lerp(startPosition, newPosition, time/timeBetweenRoom);
-            Debug.Log(time / timeBetweenRoom);
-            Debug.Log(startPosition);
-            Debug.Log(newPosition);
-            Debug.Log(transform.position);
-            Debug.Log(time < timeBetweenRoom);
             yield return null;
         }
 
