@@ -7,7 +7,7 @@ public class Breakable : MonoBehaviour
 	[SerializeField] private int resistancePoints = 1;
 	[SerializeField] private int furyPoints = 1;
 	[SerializeField] private Sprite destroyedSprite = null;
-	[SerializeField] private int typeNb;
+    [SerializeField] private int typeNb;
     private bool _isBroken = false;
 	private Collider2D _myCollider;
 
@@ -43,6 +43,7 @@ public class Breakable : MonoBehaviour
 				GetComponentInChildren<SpriteRenderer>().color = Color.gray;
 				//GetComponentInChildren<SpriteRenderer>().sprite = destroyedSprite;
 				_isBroken = true;
+			    GameManager.Instance.FuryGauge.Fury -= furyPoints;
 				Destroy(_myCollider);
 			}
 		}

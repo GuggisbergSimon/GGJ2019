@@ -9,12 +9,17 @@ public class FuryGauge : MonoBehaviour
 {
     float furyMax = 100;
     [SerializeField] float furyTime;
-    int fury;
+    int fury = 100;
     [SerializeField] Image furyBar;
+
     public int Fury
     {
         get { return fury; }
-        set { fury = value; }
+        set
+        {
+            fury = value;
+            furyBar.fillAmount = fury / furyMax;
+        }
     }
 
     private void Start()
@@ -32,10 +37,14 @@ public class FuryGauge : MonoBehaviour
 
     IEnumerator DrawFury()
     {
-        for (fury = 0; fury < furyMax; fury++)
+        while (true)
         {
             furyBar.fillAmount = fury / furyMax;
-            yield return new WaitForSeconds((1*furyTime)/furyMax);
+            if (fury < 100)
+            {
+                fury++;
+            }
+            yield return new WaitForSeconds((1 * furyTime) / furyMax);
         }
         furyBar.fillAmount = 1;
         //Load Scene Game Over
