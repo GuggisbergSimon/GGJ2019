@@ -162,6 +162,7 @@ MonoBehaviour:
   damage: 1
   aim: {fileID: 1017527758}
   eventRef: event:/Footstepv2
+  volumeSound: 100
 --- !u!50 &1310810921821708213
 Rigidbody2D:
   serializedVersion: 4

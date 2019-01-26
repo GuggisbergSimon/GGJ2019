@@ -17,10 +17,14 @@ public class Breakable : MonoBehaviour
     private FMOD.Studio.EventInstance breaking;
     private FMOD.Studio.ParameterInstance type; // 1=wood, 2=glasslittle, 3= glassbig, 4= thhhhhing
 
+    private FMOD.Studio.ParameterInstance volume;
+    [SerializeField] private float volumeSound = 100;// from 0 to 100
+
     private void Awake()
     {
         breaking = FMODUnity.RuntimeManager.CreateInstance(eventRef);
         breaking.getParameter("Object", out type);
+        breaking.getParameter("Volume", out volume);
     }
 
     private void Start()
@@ -28,8 +32,9 @@ public class Breakable : MonoBehaviour
 		actualResistancePoints = initialResistancePoints;
 		_myCollider = GetComponent<Collider2D>();
 	    type.setValue(typeNb);
-	    //FMODUnity.RuntimeManager.AttachInstanceToGameObject(footstep, transform, _myRigidBody);
-	}
+	    volume.setValue(volumeSound * (GameManager.Instance.VolumeMaster / 100));
+        //FMODUnity.RuntimeManager.AttachInstanceToGameObject(footstep, transform, _myRigidBody);
+    }
 
 	public void Damage(int points)
 	{
@@ -45,9 +50,10 @@ public class Breakable : MonoBehaviour
 				_isBroken = true;
 			    GameManager.Instance.UIManager.FuryGauge.Fury -= furyPoints;
 				Destroy(_myCollider);
-				GameManager.Instance.AStarPath.Scan();
+				//GameManager.Instance.AStarPath.Scan();
 				GameManager.Instance.UIManager.Flash();
 				}
+			Debug.Log(points);
 			GameManager.Instance.Camera.Noise(points, points);
 			StartCoroutine(StopShakingCam(initialResistancePoints));
 		}

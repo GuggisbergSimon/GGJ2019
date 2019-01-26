@@ -37,6 +37,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
+    [SerializeField] private float volumeMaster = 100;// from 0 to 100
+    public float VolumeMaster
+    {
+        get => volumeMaster;
+        set => volumeMaster = value;
+    }
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
