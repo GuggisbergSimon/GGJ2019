@@ -8,11 +8,10 @@ public class PopUpMessage : MonoBehaviour
 {
 	[SerializeField] private TextMeshProUGUI textDisplayed;
 	[SerializeField] private Image image;
-	private string currentText;
-	private float currentTimeStayAtEnd;
 	private Coroutine currentDialogue;
+	private Message currentMessage;
 
-	public void Print(Sprite sprite, string text, float timeBetweenLetters, float timeStayEnd)
+	public void Print(Message message)
 	{
 		gameObject.SetActive(true);
 		if (currentDialogue != null)
@@ -20,12 +19,11 @@ public class PopUpMessage : MonoBehaviour
 			StopCoroutine(currentDialogue);
 		}
 
-		currentText = text;
-		image.sprite = sprite;
-		currentTimeStayAtEnd = timeStayEnd;
-		if (timeBetweenLetters.CompareTo(0) != 0)
+		currentMessage = message;
+		image.sprite = message.sprite;
+		if (message.timeBetweenLetters.CompareTo(0) != 0)
 		{
-			currentDialogue = StartCoroutine(PrintLetterByLetter(timeBetweenLetters));
+			currentDialogue = StartCoroutine(PrintLetterByLetter());
 		}
 		else
 		{
@@ -33,25 +31,25 @@ public class PopUpMessage : MonoBehaviour
 		}
 	}
 
-	IEnumerator PrintLetterByLetter(float timeBetweenLetters)
+	IEnumerator PrintLetterByLetter()
 	{
 		textDisplayed.text = "";
-		for (int i = 0; i < currentText.Length; i++)
+		for (int i = 0; i < currentMessage.text.Length; i++)
 		{
-			textDisplayed.text += currentText[i];
+			textDisplayed.text += currentMessage.text[i];
 			//todo play a sound here
-			yield return new WaitForSeconds(timeBetweenLetters);
+			yield return new WaitForSeconds(currentMessage.timeBetweenLetters);
 		}
 
-		yield return new WaitForSeconds(currentTimeStayAtEnd);
+		yield return new WaitForSeconds(currentMessage.timeStayEnd);
 		gameObject.SetActive(false);
 	}
 
 	IEnumerator PrintAll()
 	{
-		textDisplayed.text = currentText;
+		textDisplayed.text = currentMessage.text;
 		//todo play a sound here
-		yield return new WaitForSeconds(currentTimeStayAtEnd);
+		yield return new WaitForSeconds(currentMessage.timeStayEnd);
 		gameObject.SetActive(false);
 	}
 }

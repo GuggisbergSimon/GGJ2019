@@ -112,6 +112,5 @@ public class FuryGauge : MonoBehaviour
             yield return new WaitForSeconds((1 * furyTime) / furyMax);
         }
         furyBar.fillAmount = 1;
-        //Load Scene Game Over
     }
 }

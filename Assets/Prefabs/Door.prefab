@@ -327,6 +327,7 @@ MonoBehaviour:
   nextRoom: {fileID: 0}
   actualRoom: {fileID: 0}
   furyAddedAfterOpening: 20
+  stuckMessage: {fileID: 11400000, guid: 4d9b3faee33af7341973f7b458aea93e, type: 2}
   eventRef: event:/Door
   volumeSound: 100
 --- !u!1 &3257483550563839582

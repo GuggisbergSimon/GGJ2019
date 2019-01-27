@@ -7,6 +7,7 @@ public class Door : MonoBehaviour
 	[SerializeField] private GameObject nextRoom;
 	[SerializeField] private GameObject actualRoom;
 	[SerializeField] private int furyAddedAfterOpening = 50;
+	[SerializeField] private Message stuckMessage;
 
 	private BoxCollider2D boxCollider2D;
 	private SpriteRenderer mySpriteRenderer;
@@ -65,7 +66,8 @@ public class Door : MonoBehaviour
 	}
 
     private void OnCollisionEnter2D(Collision2D other)
-    {
+	{
+		GameManager.Instance.UIManager.DialoguePopUpSystem.Print(stuckMessage);
         doorSound.start();
     }
     
