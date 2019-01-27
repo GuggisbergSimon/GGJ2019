@@ -90,7 +90,6 @@ public class FuryGauge : MonoBehaviour
         {
             furyBar.fillAmount = fury / furyMax;
             furyBar.color = Color.Lerp(new Color(255f/255, 230f/255, 92f/255), new Color(199f/255, 17f/255, 0f/255), fury/furyMax);
-            Debug.Log(furyBar.color);
             if (fury < 100)
             {
                 fury++;
