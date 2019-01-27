@@ -520,7 +520,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 107164733}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.8559189, y: 1.400002, z: -10}
+  m_LocalPosition: {x: 0.865819, y: 1.400002, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1562148837}
@@ -749,6 +749,7 @@ MonoBehaviour:
   initialResistancePoints: 1
   furyPoints: 1
   destroyedSprite: {fileID: 0}
+  destroyedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   typeNb: 3
   eventRef: event:/break
   volumeSound: 100
@@ -3422,49 +3423,7 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 420763299}
-    m_ColliderPaths:
-    - - X: 20031448
-        Y: -29968552
-      - X: -49968552
-        Y: -29968552
-      - X: -49968552
-        Y: 30000000
-      - X: 0
-        Y: 30000000
-      - X: 0
-        Y: 60000000
-      - X: -49968552
-        Y: 60000000
-      - X: -49968552
-        Y: 60031448
-      - X: -60031448
-        Y: 60031448
-      - X: -60031448
-        Y: -40031448
-      - X: 20031448
-        Y: -40031448
-    - - X: 60031448
-        Y: 60031448
-      - X: 49968552
-        Y: 60031448
-      - X: 49968552
-        Y: 60000000
-      - X: 20000000
-        Y: 60000000
-      - X: 20000000
-        Y: 30000000
-      - X: 49968552
-        Y: 30000000
-      - X: 49968552
-        Y: -29968552
-      - X: 39968552
-        Y: -29968552
-      - X: 39968552
-        Y: -40031448
-      - X: 60031448
-        Y: -40031448
+  m_ColliderPaths: []
   m_CompositePaths:
     m_Paths:
     - - {x: 2.0031447, y: -2.9968553}
@@ -3929,7 +3888,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &605689771
 Transform:
   m_ObjectHideFlags: 0
@@ -5690,41 +5649,7 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 1075256026}
-    m_ColliderPaths:
-    - - X: 29968552
-        Y: 10000000
-      - X: 29968552
-        Y: -29968552
-      - X: 19968552
-        Y: -29968552
-      - X: 19968552
-        Y: -40031448
-      - X: 40031448
-        Y: -40031448
-      - X: 40031448
-        Y: 40031448
-      - X: 29968552
-        Y: 40031448
-      - X: 29968552
-        Y: 40000000
-      - X: -9968553
-        Y: 40000000
-      - X: -9968553
-        Y: 40031448
-      - X: -20031448
-        Y: 40031448
-      - X: -20031448
-        Y: -40031448
-      - X: 31446
-        Y: -40031448
-      - X: 31446
-        Y: -29968552
-      - X: -9968553
-        Y: -29968552
-      - X: -9968553
-        Y: 10000000
+  m_ColliderPaths: []
   m_CompositePaths:
     m_Paths:
     - - {x: 0.0031446, y: -2.9968553}
@@ -6151,7 +6076,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1191824982
 Transform:
   m_ObjectHideFlags: 0
@@ -8247,49 +8172,7 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 1382425037}
-    m_ColliderPaths:
-    - - X: -9968553
-        Y: -29968552
-      - X: -49968552
-        Y: -29968552
-      - X: -49968552
-        Y: 30000000
-      - X: 20000000
-        Y: 30000000
-      - X: 20000000
-        Y: 60000000
-      - X: -49968552
-        Y: 60000000
-      - X: -49968552
-        Y: 60031448
-      - X: -60031448
-        Y: 60031448
-      - X: -60031448
-        Y: -40031448
-      - X: -9968553
-        Y: -40031448
-    - - X: 60031448
-        Y: 60031448
-      - X: 49968552
-        Y: 60031448
-      - X: 49968552
-        Y: 60000000
-      - X: 40000000
-        Y: 60000000
-      - X: 40000000
-        Y: 30000000
-      - X: 49968552
-        Y: 30000000
-      - X: 49968552
-        Y: -29968552
-      - X: 9968553
-        Y: -29968552
-      - X: 9968553
-        Y: -40031448
-      - X: 60031448
-        Y: -40031448
+  m_ColliderPaths: []
   m_CompositePaths:
     m_Paths:
     - - {x: -0.9968553, y: -2.9968553}
@@ -15262,7 +15145,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1662532912
 Transform:
   m_ObjectHideFlags: 0
@@ -15594,7 +15477,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1717828298
 Transform:
   m_ObjectHideFlags: 0
@@ -16506,49 +16389,7 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 1749225992}
-    m_ColliderPaths:
-    - - X: 31446
-        Y: -29968552
-      - X: -9968553
-        Y: -29968552
-      - X: -9968553
-        Y: 30000000
-      - X: 0
-        Y: 30000000
-      - X: 0
-        Y: 60000000
-      - X: -9968553
-        Y: 60000000
-      - X: -9968553
-        Y: 60031448
-      - X: -20031448
-        Y: 60031448
-      - X: -20031448
-        Y: -40031448
-      - X: 31446
-        Y: -40031448
-    - - X: 40031448
-        Y: 60031448
-      - X: 29968552
-        Y: 60031448
-      - X: 29968552
-        Y: 60000000
-      - X: 20000000
-        Y: 60000000
-      - X: 20000000
-        Y: 30000000
-      - X: 29968552
-        Y: 30000000
-      - X: 29968552
-        Y: -29968552
-      - X: 19968552
-        Y: -29968552
-      - X: 19968552
-        Y: -40031448
-      - X: 40031448
-        Y: -40031448
+  m_ColliderPaths: []
   m_CompositePaths:
     m_Paths:
     - - {x: 0.0031446, y: -2.9968553}
@@ -17060,7 +16901,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1919266191
 Transform:
   m_ObjectHideFlags: 0
@@ -18796,51 +18637,7 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 2023104045}
-    m_ColliderPaths:
-    - - X: -29968552
-        Y: -29968552
-      - X: -49968552
-        Y: -29968552
-      - X: -49968552
-        Y: 30000000
-      - X: -10000000
-        Y: 30000000
-      - X: -10000000
-        Y: 60000000
-      - X: -49968552
-        Y: 60000000
-      - X: -49968552
-        Y: 60031448
-      - X: -60031448
-        Y: 60031448
-      - X: -60031448
-        Y: -40031448
-      - X: -29968552
-        Y: -40031448
-    - - X: 60031448
-        Y: 60031448
-      - X: 49968552
-        Y: 60031448
-      - X: 49968552
-        Y: 60000000
-      - X: 9999999
-        Y: 60000000
-      - X: 10000000
-        Y: 50000000
-      - X: 10000000
-        Y: 30000000
-      - X: 49968552
-        Y: 30000000
-      - X: 49968552
-        Y: -29968552
-      - X: -10031447
-        Y: -29968552
-      - X: -10031447
-        Y: -40031448
-      - X: 60031448
-        Y: -40031448
+  m_ColliderPaths: []
   m_CompositePaths:
     m_Paths:
     - - {x: -2.9968553, y: -2.9968553}
@@ -20753,6 +20550,11 @@ PrefabInstance:
     - target: {fileID: 969359619, guid: 5d0406abb1bf41040b6a054029dbc5af, type: 3}
       propertyPath: m_SortingOrder
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 287573851972502561, guid: 5d0406abb1bf41040b6a054029dbc5af,
+        type: 3}
+      propertyPath: interactRadius
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d0406abb1bf41040b6a054029dbc5af, type: 3}
