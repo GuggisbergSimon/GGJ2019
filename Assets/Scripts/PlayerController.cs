@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour
 			_myAnimator.SetFloat("Speed", _myRigidBody.velocity.x);
 		}
 
-		if ((_isLookingRight && _myRigidBody.velocity.x < 0) || (!_isLookingRight) && _myRigidBody.velocity.x > 0)
+		if ((_isLookingRight && _myRigidBody.velocity.x < 0) || (!_isLookingRight && _myRigidBody.velocity.x > 0))
 		{
 			_isLookingRight = !_isLookingRight;
 			transform.rotation = Quaternion.Euler(0, (transform.rotation.eulerAngles.y + 180) % 360, 0);
