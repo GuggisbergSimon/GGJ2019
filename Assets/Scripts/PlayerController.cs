@@ -10,7 +10,9 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private float interactRadius = 0.5f;
 	[SerializeField] private int damage = 1;
 	[SerializeField] private GameObject aim = null;
+
 	[SerializeField] private float furyMaxTime = 1.0f;
+
 	//[SerializeField] private GameObject hitSprite = null;
 	//[SerializeField] private float timeSpriteHitAppears = 0.03f;
 	private float _horizontalInput;
@@ -79,6 +81,11 @@ public class PlayerController : MonoBehaviour
 		}
 
 		_myAnimator.SetFloat("Speed", _myRigidBody.velocity.y);
+		if (_myRigidBody.velocity.x.CompareTo(0) != 0)
+		{
+			_myAnimator.SetFloat("Speed", _myRigidBody.velocity.x);
+		}
+
 		if ((_isLookingRight && _myRigidBody.velocity.x < 0) || (!_isLookingRight) && _myRigidBody.velocity.x > 0)
 		{
 			_isLookingRight = !_isLookingRight;
@@ -173,8 +180,8 @@ public class PlayerController : MonoBehaviour
 		gameObject.SetActive(false);
 	}
 
-    private void OnDestroy()
-    {
-        footstep.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-    }
+	private void OnDestroy()
+	{
+		footstep.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+	}
 }

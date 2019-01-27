@@ -1,8 +1,7 @@
 fileFormatVersion: 2
-guid: 0613b6555a2cb9f4ca2952bbe1c7ab92
+guid: 5dbaedb4b43ef9e46af5c5986310b2d7
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Kevin frappe face_0
+  fileIDToRecycleName: {}
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -83,31 +82,11 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Kevin frappe face_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8b01280ede9a93143aa9bcfa1f9a2a54
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: ba2d73d0103ec0441a35ea7eed8cf9d7
+    spriteID: d8bc764e695926441a770ad4d3512469
     vertices: []
     indices: 
     edges: []
