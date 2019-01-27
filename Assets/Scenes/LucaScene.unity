@@ -276,7 +276,7 @@ PrefabInstance:
     - target: {fileID: 3257483550560579356, guid: 45d52dfc5256168449909fb2f5aed4cf,
         type: 3}
       propertyPath: furyAddedAfterOpening
-      value: 40
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45d52dfc5256168449909fb2f5aed4cf, type: 3}
@@ -2874,7 +2874,7 @@ PrefabInstance:
     - target: {fileID: 3257483550560579356, guid: 45d52dfc5256168449909fb2f5aed4cf,
         type: 3}
       propertyPath: furyAddedAfterOpening
-      value: 50
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45d52dfc5256168449909fb2f5aed4cf, type: 3}
@@ -4900,7 +4900,7 @@ PrefabInstance:
     - target: {fileID: 3257483550560579356, guid: 45d52dfc5256168449909fb2f5aed4cf,
         type: 3}
       propertyPath: furyAddedAfterOpening
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45d52dfc5256168449909fb2f5aed4cf, type: 3}
@@ -6084,7 +6084,7 @@ PrefabInstance:
     - target: {fileID: 3257483550560579356, guid: 45d52dfc5256168449909fb2f5aed4cf,
         type: 3}
       propertyPath: furyAddedAfterOpening
-      value: 70
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45d52dfc5256168449909fb2f5aed4cf, type: 3}
@@ -8638,6 +8638,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 107164735}
+    - target: {fileID: 8852821811988614504, guid: f3a487b098110b041add6184fa335a59,
+        type: 3}
+      propertyPath: maxFuryAllowedOpenDoor
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3a487b098110b041add6184fa335a59, type: 3}
 --- !u!1001 &1416875659
@@ -15956,7 +15961,7 @@ PrefabInstance:
     - target: {fileID: 3257483550560579356, guid: 45d52dfc5256168449909fb2f5aed4cf,
         type: 3}
       propertyPath: furyAddedAfterOpening
-      value: 60
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45d52dfc5256168449909fb2f5aed4cf, type: 3}
@@ -21085,6 +21090,11 @@ PrefabInstance:
       propertyPath: actualRoom
       value: 
       objectReference: {fileID: 534836596}
+    - target: {fileID: 3257483550560579356, guid: 45d52dfc5256168449909fb2f5aed4cf,
+        type: 3}
+      propertyPath: furyAddedAfterOpening
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45d52dfc5256168449909fb2f5aed4cf, type: 3}
 --- !u!1001 &5606381927402866164

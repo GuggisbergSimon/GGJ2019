@@ -8,8 +8,7 @@ public class Computer : MonoBehaviour
 	{
 		if (other.CompareTag("Player"))
 		{
-			Debug.Log("Shinji omedetou !");
-			//todo implement end here (fade to black ?)
+			GameManager.Instance.LoadScene("WinScene");
 		}
 	}
 }
