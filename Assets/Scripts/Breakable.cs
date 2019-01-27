@@ -7,7 +7,8 @@ public class Breakable : MonoBehaviour
 	[SerializeField] private int initialResistancePoints = 1;
 	[SerializeField] private int furyPoints = 1;
 	[SerializeField] private Sprite destroyedSprite = null;
-	[SerializeField] private int typeNb;
+	[SerializeField] private Color destroyedColor = Color.gray;
+    [SerializeField] private int typeNb;
 	private bool _isBroken = false;
 	private Collider2D _myCollider;
 	private int _actualResistancePoints;
@@ -47,9 +48,14 @@ public class Breakable : MonoBehaviour
 			{
 				breaking.start();
 				//todo replace the next line by the commented one once we have sprites
-				GetComponentInChildren<SpriteRenderer>().color = Color.gray;
-				//GetComponentInChildren<SpriteRenderer>().sprite = destroyedSprite;
-				_isBroken = true;
+
+			    if (destroyedSprite)
+			    {
+			        GetComponentInChildren<SpriteRenderer>().sprite = destroyedSprite;
+                }
+			    GetComponentInChildren<SpriteRenderer>().color = destroyedColor;
+
+                _isBroken = true;
 				_mySpriteRenderer.sortingOrder -= 1000;
 				
 			    if (GameManager.Instance.UIManager.FuryGauge.Fury < 25)

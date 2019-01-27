@@ -44,9 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1718004ae1deda6418ad7ba4bda697f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volumeMaster: 75
+  volumeMaster: 50
   volumeMusic: 100
-  volumeSound: 35
+  volumeSound: 75
 --- !u!95 &1626111661
 Animator:
   serializedVersion: 3
