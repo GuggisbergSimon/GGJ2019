@@ -172,4 +172,9 @@ public class PlayerController : MonoBehaviour
 		yield return new WaitForSeconds(time);
 		gameObject.SetActive(false);
 	}
+
+    private void OnDestroy()
+    {
+        footstep.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+    }
 }
