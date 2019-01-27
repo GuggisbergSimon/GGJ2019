@@ -34,7 +34,7 @@ public class Breakable : MonoBehaviour
 		_actualResistancePoints = initialResistancePoints;
 		_myCollider = GetComponent<Collider2D>();
 		type.setValue(typeNb);
-		volume.setValue(volumeSound * (GameManager.Instance.VolumeMaster / 100));
+		volume.setValue(volumeSound * (GameManager.Instance.VolumeMaster / 100) * (GameManager.Instance.VolumeSound / 100));
 		//FMODUnity.RuntimeManager.AttachInstanceToGameObject(footstep, transform, _myRigidBody);
 	}
 
@@ -50,7 +50,7 @@ public class Breakable : MonoBehaviour
 				GetComponentInChildren<SpriteRenderer>().color = Color.gray;
 				//GetComponentInChildren<SpriteRenderer>().sprite = destroyedSprite;
 				_isBroken = true;
-				_mySpriteRenderer.sortingOrder = -1000;
+				_mySpriteRenderer.sortingOrder -= 1000;
 				
 			    if (GameManager.Instance.UIManager.FuryGauge.Fury < 25)
 			    {

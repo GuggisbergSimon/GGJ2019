@@ -33,6 +33,19 @@ public class GameManager : MonoBehaviour
         set => volumeMaster = value;
     }
 
+    [SerializeField] private float volumeMusic = 100;// from 0 to 100
+    public float VolumeMusic
+    {
+        get => volumeMusic;
+        set => volumeMusic = value;
+    }
+
+    [SerializeField] private float volumeSound = 100;// from 0 to 100
+    public float VolumeSound
+    {
+        get => volumeSound;
+        set => volumeSound = value;
+    }
 
     private void OnEnable()
     {

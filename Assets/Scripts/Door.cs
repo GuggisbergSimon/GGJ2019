@@ -31,7 +31,8 @@ public class Door : MonoBehaviour
 	{
 		mySpriteRenderer = GetComponentInChildren<SpriteRenderer>();
 		boxCollider2D = GetComponent<BoxCollider2D>();
-		volume.setValue(volumeSound * (GameManager.Instance.VolumeMaster / 100));
+		volume.setValue(volumeSound * (GameManager.Instance.VolumeMaster / 100) * (GameManager.Instance.VolumeSound / 100));
+        Debug.Log(volumeSound);
 	}
 
 	void Update()
@@ -47,7 +48,8 @@ public class Door : MonoBehaviour
 	        else
 	        {
 	            boxCollider2D.isTrigger = false;
-	        }
+	            doorState.setValue(0);
+            }
 	    }
 	}
 
