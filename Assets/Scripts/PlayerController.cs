@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private GameObject aim = null;
 	[SerializeField] private float furyMaxTime = 1.0f;
 	[SerializeField] private GameObject hitSprite = null;
+	[SerializeField] private float timeSpriteHitAppears = 0.03f;
 	private float _horizontalInput;
 	private List<GameObject> willBreakNext = new List<GameObject>();
 	private Animator _myAnimator;
@@ -57,11 +58,13 @@ public class PlayerController : MonoBehaviour
 	{
 		_myRigidBody = GetComponent<Rigidbody2D>();
 		_myAnimator = GetComponent<Animator>();
-	    FMODUnity.RuntimeManager.AttachInstanceToGameObject(footstep, transform, _myRigidBody);
-	    FMODUnity.RuntimeManager.AttachInstanceToGameObject(hit, transform, _myRigidBody);
-	    footstep.start();
-	    volumeFoot.setValue(volumeSoundFoot * (GameManager.Instance.VolumeMaster / 100) * (GameManager.Instance.VolumeSound / 100));
-	    volumeHit.setValue(volumeSoundHit * (GameManager.Instance.VolumeMaster / 100) * (GameManager.Instance.VolumeSound / 100));
+		FMODUnity.RuntimeManager.AttachInstanceToGameObject(footstep, transform, _myRigidBody);
+		FMODUnity.RuntimeManager.AttachInstanceToGameObject(hit, transform, _myRigidBody);
+		footstep.start();
+		volumeFoot.setValue(volumeSoundFoot * (GameManager.Instance.VolumeMaster / 100) *
+							(GameManager.Instance.VolumeSound / 100));
+		volumeHit.setValue(volumeSoundHit * (GameManager.Instance.VolumeMaster / 100) *
+						   (GameManager.Instance.VolumeSound / 100));
 	}
 
 	private void FixedUpdate()
@@ -104,16 +107,18 @@ public class PlayerController : MonoBehaviour
 			}
 		}
 
-	    if (_horizontalInput < -0.1 || _horizontalInput > 0.1 || _verticalInput < -0.1 || _verticalInput > 0.1)
-	    {
-	        end.setValue(1);
-	    } else if (_preHorizontalInput < -0.1 || _preHorizontalInput > 0.1 || _preVerticalInput < -0.1 || _preVerticalInput > 0.1)
-	    {
-	        randomLoop.setValue(Random.Range(0, 2.5f));
-	        end.setValue(1.5f);
-	    }
+		if (_horizontalInput < -0.1 || _horizontalInput > 0.1 || _verticalInput < -0.1 || _verticalInput > 0.1)
+		{
+			end.setValue(1);
+		}
+		else if (_preHorizontalInput < -0.1 || _preHorizontalInput > 0.1 || _preVerticalInput < -0.1 ||
+				 _preVerticalInput > 0.1)
+		{
+			randomLoop.setValue(Random.Range(0, 2.5f));
+			end.setValue(1.5f);
+		}
 
-        _preHorizontalInput = _horizontalInput;
+		_preHorizontalInput = _horizontalInput;
 		_preVerticalInput = _verticalInput;
 
 		if (GameManager.Instance.UIManager.FuryGauge.Fury >= 100)
@@ -133,8 +138,8 @@ public class PlayerController : MonoBehaviour
 				canDie = false;
 			}
 
-		    timer += Time.deltaTime;
-            yield return null;
+			timer += Time.deltaTime;
+			yield return null;
 		}
 
 		if (canDie)
@@ -154,17 +159,17 @@ public class PlayerController : MonoBehaviour
 		{
 			hit.GetComponent<Breakable>().Damage(damage);
 		}
-		
+
 		hitSprite.SetActive(true);
 		hitSprite.transform.rotation = Quaternion.Euler(Vector3.zero);
-		StartCoroutine(HideGameObjectNextFrame(hitSprite));
+		StartCoroutine(HideGameObjectIn(hitSprite, timeSpriteHitAppears));
 		willBreakNext = new List<GameObject>();
 		_canPunch = true;
 	}
-	
-	private IEnumerator HideGameObjectNextFrame(GameObject gameObject)
+
+	private IEnumerator HideGameObjectIn(GameObject gameObject, float time)
 	{
-		yield return null;
+		yield return new WaitForSeconds(time);
 		gameObject.SetActive(false);
 	}
 

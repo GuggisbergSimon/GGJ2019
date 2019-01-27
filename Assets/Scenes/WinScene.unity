@@ -1229,7 +1229,7 @@ GameObject:
   - component: {fileID: 1487898375}
   - component: {fileID: 1487898374}
   m_Layer: 0
-  m_Name: playerpixel_24
+  m_Name: playerpixel dancing left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1557,7 +1557,7 @@ GameObject:
   - component: {fileID: 2074756341}
   - component: {fileID: 2074756340}
   m_Layer: 0
-  m_Name: playerpixel_24 (1)
+  m_Name: playerpixel dancing right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
