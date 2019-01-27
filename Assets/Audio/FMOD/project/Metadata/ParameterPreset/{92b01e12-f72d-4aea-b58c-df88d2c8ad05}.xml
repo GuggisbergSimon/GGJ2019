@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{92b01e12-f72d-4aea-b58c-df88d2c8ad05}">
+        <property name="name">
+            <value>Fury</value>
+        </property>
+        <relationship name="folder">
+            <destination>{5ba0ef94-8478-46a7-a689-ad7499b70595}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{f9e1d7a4-9dc8-4611-952b-e22b04c55b22}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{f9e1d7a4-9dc8-4611-952b-e22b04c55b22}">
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+    </object>
+</objects>

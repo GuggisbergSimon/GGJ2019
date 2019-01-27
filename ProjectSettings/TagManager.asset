@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Breakable
   layers:
   - Default
   - TransparentFX
@@ -13,7 +14,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Game
   - 
   - 
   - 
@@ -40,4 +41,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Floor
+    uniqueID: 1021709261
+    locked: 0
+  - name: Wall
+    uniqueID: 1115494607
+    locked: 0
+  - name: Object
+    uniqueID: 2551150209
+    locked: 0
+  - name: Player
+    uniqueID: 1483753833
+    locked: 0
+  - name: UI
+    uniqueID: 986817335
     locked: 0

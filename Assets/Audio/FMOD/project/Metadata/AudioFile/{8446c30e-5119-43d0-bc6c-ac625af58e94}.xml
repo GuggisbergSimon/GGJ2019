@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{8446c30e-5119-43d0-bc6c-ac625af58e94}">
+        <property name="assetPath">
+            <value>Sound/sounds/broken_objects/broken thhhhing.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>0.75893424036281176</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{6d7bc1f8-aa3f-4512-874c-d7e448ffd258}</destination>
+        </relationship>
+    </object>
+</objects>
