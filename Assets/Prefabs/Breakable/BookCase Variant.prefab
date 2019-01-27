@@ -82,16 +82,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2.4700594
       objectReference: {fileID: 0}
-    - target: {fileID: 994565528632503124, guid: 58a6f6af57f898f4fb65834c523360bc,
-        type: 3}
-      propertyPath: initialResistancePoints
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 994565528632503124, guid: 58a6f6af57f898f4fb65834c523360bc,
-        type: 3}
-      propertyPath: typeNb
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2345227104983200410, guid: 58a6f6af57f898f4fb65834c523360bc,
         type: 3}
       propertyPath: m_Offset.x
@@ -111,6 +101,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 0.31538695
+      objectReference: {fileID: 0}
+    - target: {fileID: 994565528632503124, guid: 58a6f6af57f898f4fb65834c523360bc,
+        type: 3}
+      propertyPath: typeNb
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 701669035, guid: 58a6f6af57f898f4fb65834c523360bc, type: 3}
       propertyPath: m_Sprite
