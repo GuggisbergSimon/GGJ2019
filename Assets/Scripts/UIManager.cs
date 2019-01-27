@@ -11,8 +11,10 @@ public class UIManager : MonoBehaviour
 	[SerializeField] private GameObject postProcessObject = null;
 	[SerializeField] private float flashDuration = 0.01f;
 	private int numberFlash;
-    [SerializeField] private GameObject head;
-    public GameObject Head => head;
+	[SerializeField] private GameObject head;
+	[SerializeField] private PopUpMessage dialoguePopUpSystem;
+	public PopUpMessage DialoguePopUpSystem => dialoguePopUpSystem;
+	public GameObject Head => head;
 
     private FuryGauge furyGauge;
 	public FuryGauge FuryGauge => furyGauge;
