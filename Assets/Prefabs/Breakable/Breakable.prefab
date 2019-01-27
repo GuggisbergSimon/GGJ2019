@@ -127,7 +127,7 @@ MonoBehaviour:
   initialResistancePoints: 1
   furyPoints: 10
   destroyedSprite: {fileID: 0}
-  destroyedColor: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 1}
+  destroyedColor: {r: 0.6886792, g: 0.6886792, b: 0.6886792, a: 1}
   typeNb: 2
   eventRef: event:/break
   volumeSound: 100
