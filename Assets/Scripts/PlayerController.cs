@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private int damage = 1;
 	[SerializeField] private GameObject aim = null;
 	[SerializeField] private float furyMaxTime = 1.0f;
+	[SerializeField] private GameObject hitSprite = null;
 	private float _horizontalInput;
 	private List<GameObject> willBreakNext = new List<GameObject>();
 	private Animator _myAnimator;
@@ -36,21 +37,21 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private float volumeSoundFoot = 100; // from 0 to 100
 
 
-    [FMODUnity.EventRef] [SerializeField] private string eventRefHit;
-    private FMOD.Studio.EventInstance hit;
-    private FMOD.Studio.ParameterInstance volumeHit;
-    [SerializeField] private float volumeSoundHit = 100; // from 0 to 100
+	[FMODUnity.EventRef] [SerializeField] private string eventRefHit;
+	private FMOD.Studio.EventInstance hit;
+	private FMOD.Studio.ParameterInstance volumeHit;
+	[SerializeField] private float volumeSoundHit = 100; // from 0 to 100
 
-    private void Awake()
+	private void Awake()
 	{
 		footstep = FMODUnity.RuntimeManager.CreateInstance(eventRefFoot);
 		footstep.getParameter("RandomFoot", out randomLoop);
 		footstep.getParameter("end", out end);
 		footstep.getParameter("Volume", out volumeFoot);
 
-	    hit = FMODUnity.RuntimeManager.CreateInstance(eventRefHit);
-	    hit.getParameter("Volume", out volumeHit);
-    }
+		hit = FMODUnity.RuntimeManager.CreateInstance(eventRefHit);
+		hit.getParameter("Volume", out volumeHit);
+	}
 
 	private void Start()
 	{
@@ -90,9 +91,10 @@ public class PlayerController : MonoBehaviour
 		{
 			_canPunch = false;
 			_myAnimator.SetTrigger("Attack");
-		    hit.start();      
+			hit.start();
 			//todo find a more elegant way to get the child of aim
-			Collider2D[] hits = Physics2D.OverlapCircleAll(aim.transform.GetChild(0).transform.position, interactRadius);
+			Collider2D[] hits =
+				Physics2D.OverlapCircleAll(aim.transform.GetChild(0).transform.position, interactRadius);
 			foreach (var hit in hits)
 			{
 				if (hit && hit.CompareTag("Breakable"))
@@ -152,8 +154,17 @@ public class PlayerController : MonoBehaviour
 		{
 			hit.GetComponent<Breakable>().Damage(damage);
 		}
-
+		
+		hitSprite.SetActive(true);
+		hitSprite.transform.rotation = Quaternion.Euler(Vector3.zero);
+		StartCoroutine(HideGameObjectNextFrame(hitSprite));
 		willBreakNext = new List<GameObject>();
 		_canPunch = true;
+	}
+	
+	private IEnumerator HideGameObjectNextFrame(GameObject gameObject)
+	{
+		yield return null;
+		gameObject.SetActive(false);
 	}
 }
