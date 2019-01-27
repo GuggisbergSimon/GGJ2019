@@ -107,6 +107,12 @@ PrefabInstance:
       propertyPath: typeNb
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 994565528632503124, guid: 58a6f6af57f898f4fb65834c523360bc,
+        type: 3}
+      propertyPath: destroyedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 46a999f409b16ca4c8bc56b1328744f3,
+        type: 3}
     - target: {fileID: 701669035, guid: 58a6f6af57f898f4fb65834c523360bc, type: 3}
       propertyPath: m_Sprite
       value: 
