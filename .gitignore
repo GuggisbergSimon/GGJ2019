@@ -65,10 +65,8 @@ Assets/Universal Sound FX/
 Assets/Universal Sound FX\.meta
 
 Assets/FMODStudioCache.asset
-Assets/FMODStudioCache.asset.meta
 
 Assets/StreamingAssets/*.bank
-Assets/StreamingAssets/*.bank.meta
 
 fmod.log
 
