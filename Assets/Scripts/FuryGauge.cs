@@ -10,7 +10,7 @@ public class FuryGauge : MonoBehaviour
 {
     float furyMax = 100;
     [SerializeField] float furyTime;
-    int fury = 50;
+    [SerializeField] int fury = 50;
     [SerializeField] Image furyBar;
     [SerializeField] private Sprite[] spriteHead;
     [SerializeField] private Sprite[] spriteHair;

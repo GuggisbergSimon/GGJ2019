@@ -4,30 +4,45 @@ using UnityEngine;
 
 public class Music : MonoBehaviour
 {
-    [FMODUnity.EventRef] [SerializeField] private string eventRefFoot;
-    private FMOD.Studio.EventInstance footstep;
-    private FMOD.Studio.ParameterInstance end; // 0 = init, 1 = walk, 1.5 = end, 2 = echo
-    private FMOD.Studio.ParameterInstance volumeFoot;
-    [SerializeField] private float volumeSoundFoot = 100; // from 0 to 100
+    [FMODUnity.EventRef] [SerializeField] private string eventRefMusic;
+    private FMOD.Studio.EventInstance music;
+    private FMOD.Studio.ParameterInstance furySound; // 0 = init, 1 = walk, 1.5 = end, 2 = echo
+    private FMOD.Studio.ParameterInstance volumeMusic;
+    [SerializeField] private float volumeSoundMusic = 100; // from 0 to 100
     [SerializeField] private float fury = 100; // from 0 to 100
+
 
     private void Awake()
     {
-        footstep = FMODUnity.RuntimeManager.CreateInstance(eventRefFoot);
-        footstep.getParameter("Fury", out end);
-        footstep.getParameter("Volume", out volumeFoot);
+        music = FMODUnity.RuntimeManager.CreateInstance(eventRefMusic);
+        music.getParameter("Fury", out furySound);
+        music.getParameter("Volume", out volumeMusic);
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        footstep.start();
-        volumeFoot.setValue(volumeSoundFoot * (GameManager.Instance.VolumeMaster / 100) * (GameManager.Instance.VolumeMusic / 100));
+        music.start();
+        volumeMusic.setValue(volumeSoundMusic * (GameManager.Instance.VolumeMaster / 100) * (GameManager.Instance.VolumeMusic / 100));
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(music, transform, GetComponent<Rigidbody2D>());
     }
 
     // Update is called once per frame
     void Update()
     {
-        end.setValue(GameManager.Instance.UIManager.FuryGauge.Fury/100f);
+        if (GameManager.Instance.UIManager)
+        {
+            furySound.setValue(GameManager.Instance.UIManager.FuryGauge.Fury / 100f);
+        }
+        else
+        {
+            furySound.setValue(fury / 100);
+            volumeMusic.setValue(volumeSoundMusic * (GameManager.Instance.VolumeMaster / 100) * (GameManager.Instance.VolumeMusic / 100));
+        }
+    }
+
+    private void OnDestroy()
+    {
+        music.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 }
