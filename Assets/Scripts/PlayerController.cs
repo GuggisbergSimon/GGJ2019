@@ -11,8 +11,8 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private int damage = 1;
 	[SerializeField] private GameObject aim = null;
 	[SerializeField] private float furyMaxTime = 1.0f;
-	[SerializeField] private GameObject hitSprite = null;
-	[SerializeField] private float timeSpriteHitAppears = 0.03f;
+	//[SerializeField] private GameObject hitSprite = null;
+	//[SerializeField] private float timeSpriteHitAppears = 0.03f;
 	private float _horizontalInput;
 	private List<GameObject> willBreakNext = new List<GameObject>();
 	private Animator _myAnimator;
@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
 			}
 		}
 
-		_myAnimator.SetFloat("Speed", _myRigidBody.velocity.magnitude);
+		_myAnimator.SetFloat("Speed", _myRigidBody.velocity.y);
 		if ((_isLookingRight && _myRigidBody.velocity.x < 0) || (!_isLookingRight) && _myRigidBody.velocity.x > 0)
 		{
 			_isLookingRight = !_isLookingRight;
@@ -160,9 +160,9 @@ public class PlayerController : MonoBehaviour
 			hit.GetComponent<Breakable>().Damage(damage);
 		}
 
-		hitSprite.SetActive(true);
-		hitSprite.transform.rotation = Quaternion.Euler(Vector3.zero);
-		StartCoroutine(HideGameObjectIn(hitSprite, timeSpriteHitAppears));
+		//hitSprite.SetActive(true);
+		//hitSprite.transform.rotation = Quaternion.Euler(Vector3.zero);
+		//StartCoroutine(HideGameObjectIn(hitSprite, timeSpriteHitAppears));
 		willBreakNext = new List<GameObject>();
 		_canPunch = true;
 	}
