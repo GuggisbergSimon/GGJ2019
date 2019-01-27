@@ -3321,8 +3321,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51b251ec0a8780645b47cc1e78f85e47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minTime: 5
-  maxTime: 10
+  minTime: 10
+  maxTime: 15
   sceneToLoad: OpeningCinematique
 --- !u!4 &1163752704
 Transform:
@@ -4128,7 +4128,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2047947325, guid: 48620a3d5d7556d419fd6744e37f1824, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2047947325, guid: 48620a3d5d7556d419fd6744e37f1824, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
