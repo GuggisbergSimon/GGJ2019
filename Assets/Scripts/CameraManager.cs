@@ -10,8 +10,8 @@ public class CameraManager : MonoBehaviour
 	private CinemachineBasicMultiChannelPerlin noise;
 	private int numberShaking = 0;
 
-	private float constantAmplitude = 10;
-	private float constantFrequency = 10;
+	[SerializeField] private float constantAmplitude = 10;
+	[SerializeField] private float constantFrequency = 10;
 	private bool temporaryNoise = false;
 
 	void Start()
